@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<body>
+    <style>
+        body{
+            background: url(/img/home_bg.e9720be.png) 50% no-repeat;
+            background-color: rgba(0, 0, 0, 0);
+            background-position-x: 50%;
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-image: url("/img/home_bg.e9720be.png");
+            background-size: auto;
+            background-origin: padding-box;
+            background-clip: border-box;
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+            width:100vw;
+            height: 100vh;
+        }
+        
+        .home_logo{
+            position: absolute;
+            left: 50%;
+            transform:translateX(-50%);
+        }
+    </style>
+    <img src="/img/home_logo.83ba690.png" alt="" class="home_logo" data-v-3ad37406="">
+<div id="overlay">
+        <div id="modal">
+            <h2>Connexion</h2>
+            <p>Veuillez entrer votre ID de joueur pour accéder au site.</p>
+            <form id="idForm">
+                <input type="text" id="modalPlayerId" placeholder="ID du joueur" required>
+                <button type="submit">Valider</button>
+            </form>
+            <p id="modalError" style="color: red; display: none;">Erreur lors de la validation de l'ID.</p>
+        </div>
+    </div>
+</body>
+      <script src="js/login.js"></script>
+</html>

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:${APP_PROD_PORT}"
+    depends_on:
+      - mongodb
+    environment:
+        MONGO_URI: ${MONGO_URI}
+        ALLOWED_HOST: ${ALLOWED_HOST}
+  mongodb:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:${DB_PROD_PORT}"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

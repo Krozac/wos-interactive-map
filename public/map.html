@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Whiteout Survival Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "/libs/three/three.module.js",
+            "OrbitControls": "/libs/three/OrbitControls.js"
+          }
+        }
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/toast.js"></script>
+</head>
+<body>
+    <!-- Contenu principal -->
+    <div id="mainContent">
+        <div id = "Head">
+            <img alt="" class="img avatar" src="">
+            <div>
+                <div class= "roleInfo"><p class="name" id ="username"></p></div>
+                <div class= "roleInfo"><p data-i18n-key="furnace-level"></p><p class="furnace"></p></div>
+                <div class= "roleInfo"><p data-i18n-key="kid"></p><p class="server"></p></div>
+            </div>
+            <div id = "edituser"><i class="fas fa-edit"></i></div>
+        </div>
+        <div id="language-buttons"></div>
+        <div id="triangle" style="display: none"></div>
+        <div id = "Cell" style="display: none">
+            <div id="addBuildingBtn" onclick="showFormBuilding('add')"><i class="fas fa-plus"></i></div>
+            <div id="editBuildingBtn" onclick="showFormBuilding('edit')"><i class="fas fa-pen"></i></div>
+            <div id="deleteBuildingBtn"><i class="fas fa-minus"></i></div>
+            <div id = "banner">
+                <img id = "img-cell" src = "img/banner/icelands.png">
+                <div id = "coordinates">
+                    <p id = "x">x:0</p>
+                    <p id = "y">y:0</p>
+                </div> 
+            </div>
+            <p id = "status">Inconnu</p>
+            <p id = "add1"></p>
+            <p id = "add2"></p>
+        </div>
+        <div id = "Menu">
+            <div id="SideMenu">
+                <button onclick="showMenu('Buildings')"><img src="./img/buttons/buildings.png"><p data-i18n-key="menu-buildings">Buildings</p></button>
+                <button onclick="showMenu('Furnace-Placed')"><img src="./img/buttons/territory.png"><p data-i18n-key="menu-territory">Territory</p></button>
+                <button onclick="showMenu('Users')"><img src="./img/buttons/players.png"><p data-i18n-key="menu-members">Members</p></button>
+                <button onclick="showMenu('Gift')"><img src="./img/buttons/gift.png"><p data-i18n-key="menu-gift">Gift</p></button>
+            </div>
+            <div id = "InsideMenu">
+            <div id = "Buildings" >
+                <div id = "BuildingType" style="display:none"></div>
+                <div value = "Banner" id ="Banner" class = "Building mythic"  height = "1" width = "1">
+                    <img src = "img/alliance/banner.png">
+                    <p>Bannière</p>
+                </div>
+                <div value = "Furnace" id ="Furnace" class = "Building mythic" height = "2" width = "2">
+                    <img src = "img/furnace.png">
+                    <p>Chaudière</p>
+                </div>
+                <div value = "HQ" id ="HQ" class = "Building legendary"  height = "3" width = "3">
+                    <img src = "img/alliance/hq.png">
+                    <p>QG</p>
+                </div>
+                <div value = "Trap" id ="Trap" class = "Building legendary"  height = "3" width = "3">
+                    <img src = "img/alliance/trap.png">
+                    <p>Piège</p>
+                </div>
+                </div>
+            <div id = "Furnace-Placed"></div>
+            <div id = "Users"></div>
+            <div id = "Gift">
+                <div class="main_content">
+                    <div class="input_wrap">
+                        <input type="text" placeholder="Saisir le Code Cadeau" id= "gift-code" maxlength="20">
+                    </div>
+                    <div class="tips_text" style="font-size: 12px;color: #3e94ca;">
+                        *Les récompenses seront envoyées directement dans le courrier du personnage après l'échange.
+                    </div>
+                    <div class="btn exchange_btn disabled" id="bt-gift" style="font-size: 18px;
+                      line-height: 18px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: #fff;
+                      border-radius: 8px;
+                      padding:5px;
+                      cursor: pointer;background: #66b1ff;">Confirmer</div>
+                    <div id = loading>
+                        <div id = "loading-bar"></div>
+                        <div id = "loading-status">
+                            <p id = "loading-label"></p>
+                            <p id = "loading-value"></p>
+                            <p id = "timer-display"></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+        <div id = "Form" style="display:none">
+            <div id = "closeFormButton" onclick="closeForm()"><i class="fas fa-window-close"></i></div>   
+            <form id="FurnaceForm" class = "form" style="flex-direction: column; gap: 5px; width: auto; margin: 0 auto;">
+                <div class="input-group" style="display: flex; flex-direction: column;">
+                    <label for="inputname" style=" ont-weight: bold;">Nom Joueur: </label>
+                    <input type="text" id="inputnamefurnace" name="inputname" required="" 
+                        style=" border: 1px solid #ccc; border-radius: 4px; width:90%;">
+                </div>
+                <div class="flex-row" style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+                        <label for="inputx" style="font-weight: bold;">x: </label>
+                        <input type="text" id="inputxfurnace" name="inputx" required="" 
+                            style="border: 1px solid #ccc; border-radius: 4px;width:50%;">
+                    </div>
+                    <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+                        <label for="inputy" style="font-weight: bold;">y: </label>
+                        <input type="text" id="inputyfurnace" name="inputy" required="" 
+                            style="border: 1px solid #ccc; border-radius: 4px;width:50%;">
+                    </div>
+                </div>
+                <div class="input-group" style="display: flex; flex-direction: column;">
+                    <label for="inputname" style=" ont-weight: bold;">Alliance: </label>
+                    <select  type="text" id="inputalliancefurnace" name="inputname" required="" 
+                        style=" border: 1px solid #ccc; border-radius: 4px; width:90%;">
+                        <option v-color="#00BFFF" v-acro="[WKL]">[WKL] Wankil</option>
+                        <option v-color="#FFFF00" v-acro="[wkl]">[wkl] Wankilfarm</option>
+                        <option v-color="#40E0D0" v-acro="[Wkl]">[Wkl] WankiL (Aca)</option>
+                        </select>
+                </div>
+                <button type="submit" 
+                    style="align-self: flex-start; padding: 5px 15px; background-color: rgb(0, 123, 255); 
+                           color: rgb(255, 255, 255); border: none; border-radius: 5px; cursor: pointer;">
+                    Envoyer
+                </button>
+            </form>
+            <form id="HQForm" class = "form" style="flex-direction: column; gap: 5px; width: auto; margin: 0 auto;">
+                <div class="flex-row" style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+                        <label for="inputx" style="font-weight: bold;">x: </label>
+                        <input type="text" id="inputxhq" name="inputx" required="" 
+                            style="border: 1px solid #ccc; border-radius: 4px;width:50%;">
+                    </div>
+                    <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+                        <label for="inputy" style="font-weight: bold;">y: </label>
+                        <input type="text" id="inputyhq" name="inputy" required="" 
+                            style="border: 1px solid #ccc; border-radius: 4px;width:50%;">
+                    </div>
+                </div>
+                <div class="input-group" style="display: flex; flex-direction: column;">
+                    <label for="inputname" style=" ont-weight: bold;">Alliance: </label>
+                    <select  type="text" id="inputalliancehq" name="inputname" required="" 
+                        style=" border: 1px solid #ccc; border-radius: 4px; width:90%;">
+                            <option v-color="#00BFFF" v-acro="[WKL]">[WKL] Wankil</option>
+                            <option v-color="#FFFF00" v-acro="[wkl]">[wkl] Wankilfarm</option>
+                            <option v-color="#40E0D0" v-acro="[Wkl]">[Wkl] WankiL (Aca)</option>
+                        </select>
+                </div>
+                <button type="submit" 
+                    style="align-self: flex-start; padding: 5px 15px; background-color: rgb(0, 123, 255); 
+                           color: rgb(255, 255, 255); border: none; border-radius: 5px; cursor: pointer;">
+                    Envoyer
+                </button>
+            </form>
+            <form id="TrapForm" class = "form" style="flex-direction: column; gap: 5px; width: auto; margin: 0 auto;">
+                <div class="flex-row" style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+                        <label for="inputx" style="font-weight: bold;">x: </label>
+                        <input type="text" id="inputxtrap" name="inputx" required="" 
+                            style="border: 1px solid #ccc; border-radius: 4px;width:50%;">
+                    </div>
+                    <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+                        <label for="inputy" style="font-weight: bold;">y: </label>
+                        <input type="text" id="inputytrap" name="inputy" required="" 
+                            style="border: 1px solid #ccc; border-radius: 4px;width:50%;">
+                    </div>
+                </div>
+                <div class="input-group" style="display: flex; flex-direction: column;">
+                    <label for="inputname" style=" ont-weight: bold;">Alliance: </label>
+                    <select  type="text" id="inputalliancetrap" name="inputname" required="" 
+                        style=" border: 1px solid #ccc; border-radius: 4px; width:90%;">
+                        <option v-color="#00BFFF" v-acro="[WKL]">[WKL] Wankil</option>
+                        <option v-color="#FFFF00" v-acro="[wkl]">[wkl] Wankilfarm</option>
+                        <option v-color="#40E0D0" v-acro="[Wkl]">[Wkl] WankiL (Aca)</option>
+                        </select>
+                </div>
+                <button type="submit" 
+                    style="align-self: flex-start; padding: 5px 15px; background-color: rgb(0, 123, 255); 
+                           color: rgb(255, 255, 255); border: none; border-radius: 5px; cursor: pointer;">
+                    Envoyer
+                </button>
+            </form>
+            <form id="BannerForm" class = "form" style="flex-direction: column; gap: 5px; width: auto; margin: 0 auto;">
+                <div class="flex-row" style="display: flex; justify-content: space-between; gap: 10px;">
+                    <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+                        <label for="inputx" style="font-weight: bold;">x: </label>
+                        <input type="text" id="inputxbanner" name="inputx" required="" 
+                            style="border: 1px solid #ccc; border-radius: 4px;width:50%;">
+                    </div>
+                    <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+                        <label for="inputy" style="font-weight: bold;">y: </label>
+                        <input type="text" id="inputybanner" name="inputy" required="" 
+                            style="border: 1px solid #ccc; border-radius: 4px;width:50%;">
+                    </div>
+                </div>
+                <div class="input-group" style="display: flex; flex-direction: column;">
+                    <label for="inputname" style=" ont-weight: bold;">Alliance: </label>
+                    <select  type="text" id="inputalliancebanner" name="inputname" required="" 
+                        style=" border: 1px solid #ccc; border-radius: 4px; width:90%;">
+                        <option v-color="#00BFFF" v-acro="[WKL]">[WKL] Wankil</option>
+                        <option v-color="#FFFF00" v-acro="[wkl]">[wkl] Wankilfarm</option>
+                        <option v-color="#40E0D0" v-acro="[Wkl]">[Wkl] WankiL (Aca)</option>
+                        </select>
+                </div>
+                <button type="submit" 
+                    style="align-self: flex-start; padding: 5px 15px; background-color: rgb(0, 123, 255); 
+                           color: rgb(255, 255, 255); border: none; border-radius: 5px; cursor: pointer;">
+                    Envoyer
+                </button>
+            </form>
+        </div>
+        <button id="toggleButton" onclick="toggleBuildings()">
+                <i id="eyeIcon" class="fas fa-eye"></i> <!-- Icône d'œil initiale -->
+            </button>
+            <button class = "button" id="languageButton">
+                <i class="fas fa-globe-europe"></i>
+                <img id="selected-flag"  src="">
+            </button>
+        <button class = "button" id="logoutButton">
+            <i class="fas fa-sign-out-alt"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/loaded.js"></script>
+    <script src="js/crud/Forms.js"></script>
+    <script type="module" src="js/three/main.js"></script>
+    <script type="module" src = "js/crud/buildings.js"></script>
+    <script type="module">
+        import { addBuildingFurnace ,updateBuildingFurnace} from '/js/crud/buildings.js';
+        document.getElementById('FurnaceForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            let action = document.getElementById("Form").getAttribute("action");
+            if (action == 'add'){
+                addBuildingFurnace();
+            }else if (action=='edit'){
+                updateBuildingFurnace();
+            }
+            window.hideCell();
+            closeForm();
+        };
+        
+        import { addBuildingHQ } from '/js/crud/buildings.js';
+        document.getElementById('HQForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            addBuildingHQ();
+            closeForm();
+        };
+        
+        import { addBuildingTrap } from '/js/crud/buildings.js';
+        document.getElementById('TrapForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            addBuildingTrap();
+            closeForm();
+        };
+        
+        
+        import { addBuildingBanner } from '/js/crud/buildings.js';
+        document.getElementById('BannerForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            addBuildingBanner();
+            closeForm();
+        };
+        
+        import { deleteBuilding } from '/js/crud/buildings.js';
+        document.getElementById('deleteBuildingBtn').onclick = function(event){
+                if(window.selectedbuilding){
+                    deleteBuilding(window.selectedbuilding.building._id);
+                }  
+        }
+        
+        import { loadUsers,fetchUsers,loadUsersAndSendGiftCode} from '/js/crud/users.js'
+        let users = await fetchUsers();
+        loadUsers(users);
+        
+        
+        document.getElementById("bt-gift").addEventListener("click",(event)=>{
+            let code = document.getElementById("gift-code").value;
+            loadUsersAndSendGiftCode(code);
+        })
+        
+        document.getElementById("edituser").addEventListener("click",(event)=>{
+            
+        })
+               
+    </script>
+    <script type="module" src="js/main.js"></script>
+    <script src ="js/locale.js"></script>
+</body>
+</html>
