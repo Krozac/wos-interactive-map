@@ -42,3 +42,4 @@ docker-compose up --build
 # Notes
 - Ensure the .env file is not shared publicly to protect sensitive information.
 - For production, secure MongoDB with authentication and restrict access.
+- This is not the final version, so there may still be bugs and security issues.
