@@ -329,7 +329,7 @@ canvas{
     background: #ffffff;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    overflow: scroll;
+    overflow: hidden;
     height:100%;
 }
 #Buildings{
@@ -567,6 +567,10 @@ canvas{
     height:15px;
 }
 
+.user-lvl-content{
+    width: 25px !important;
+    height: 25px !important;
+}
 #loading{
     display:block;
 }

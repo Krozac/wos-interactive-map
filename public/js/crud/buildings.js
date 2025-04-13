@@ -270,7 +270,7 @@ export async function updateBuildingFurnace() {
 
 
 function addFurnaceToDiv(building) {
-    const buildingsContainer = document.getElementById('Furnace-Placed');
+    const buildingsContainer = document.getElementById('furnace-list');
     
     if (!buildingsContainer || building.type !="Furnace") {
         return;
@@ -307,7 +307,29 @@ export function loadFurnaces(buildings){
     furnaces.forEach(furnace=>{
         addFurnaceToDiv(furnace);
     })
+
+    document.getElementById('search-bar').addEventListener('input', () => {
+        const buildingsContainer = document.getElementById('furnace-list');
+        const searchBar = document.getElementById('search-bar');
+        const searchValue = searchBar.value.toLowerCase();
+    
+        // Clear the current list
+        buildingsContainer.innerHTML = '';
+    
+        // Re-add furnaces that match the search criteria
+        const furnaces = buildings.filter(building => building.type === "Furnace");
+        furnaces.forEach(furnace => {
+            if (
+                !searchValue ||
+                furnace.extraData.name.toLowerCase().startsWith(searchValue) ||
+                furnace.extraData.alliance.toLowerCase().startsWith(searchValue)
+            ) {
+                addFurnaceToDiv(furnace);
+            }
+        });
+    });
 }
+
 
 
 export async function addBuildingTrap() {

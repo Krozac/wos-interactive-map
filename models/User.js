@@ -6,7 +6,8 @@ const UserSchema = new mongoose.Schema({
     avatar: { type: String, required: true },
     lvl: { type: String, required: true },
     power: { type: Number},
-    rallie: { type: Number}
+    rallie: { type: Number},
+    lvl_content: { type: String}
 });
 
 

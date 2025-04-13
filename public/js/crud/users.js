@@ -18,7 +18,9 @@ export async function fetchUsers() {
     }
 }
 
-
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 function addUserToDiv(user) {
     const usersContainer = document.getElementById('Users');
 
@@ -39,8 +41,9 @@ function addUserToDiv(user) {
         <div class="user-avatar"><img src="${user.avatar}" alt="${user.nom}'s Avatar"></div>
         <div class="user-card-info">
             <h3 class="user-name">${user.nom}</h3>
-            <div><img src="/img/buttons/stove.png"><p class="user-lvl">Lv. ${user.lvl}</p></div>
-            <div><img src="/img/buttons/power.png"><p class="user-power">30 M</p></div>
+            <div><img src="/img/buttons/stove.png"><p class="user-lvl">Lv. ${user.lvl}</p>${user.lvl_content && user.lvl_content.match(/\.(jpeg|jpg|gif|png|svg|webp)$/i) ? 
+        `<img class = "user-lvl-content" src="${user.lvl_content}" alt="">` : ''}</div>
+            <div><img src="/img/buttons/power.png"><p class="user-power">${user.power ? numberWithSpaces(user.power) : "???"}</p></div>
         </div>
     `;
 

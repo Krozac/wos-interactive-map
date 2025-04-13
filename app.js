@@ -139,6 +139,12 @@ app.post('/validate-id', async (req, res) => {
                     avatar: apiResponse.data.avatar_image 
                 });
                 await user.save();
+            } else {
+                user.nom = apiResponse.data.nickname;
+                user.lvl = apiResponse.data.stove_lv;
+                user.avatar = apiResponse.data.avatar_image;
+                user.lvl_content = apiResponse.data.stove_lv_content;
+                await user.save();
             }
             
             return res.json({ success: true, token, playerData: apiResponse.data });
