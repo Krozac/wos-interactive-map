@@ -1,0 +1,24 @@
+{  
+  "language-name": "Français",
+  "language-flag": "https://www.drapeauxdespays.fr/data/flags/h80/fr.png",
+  "menu-login": "Connexion",
+  "menu-login-prompt": "Veuillez vous connecter pour accéder à la carte interactive.",
+  "menu-login-preview": "Entrer votre identifiant de jeu",
+  "menu-buildings": "Bâtiments",
+  "menu-territory": "Territoire",
+  "menu-members": "Membres",
+  "menu-gift": "Cadeau",
+  "menu-alliance": "Alliance",
+  "furnace-level": "Niveau de Chaudière : ",
+  "kid": "Région : ",
+  "buildings": {
+    "banner": "Bannière",
+    "furnace": "Chaudière",
+    "hq": "QG",
+    "trap": "Piège",
+    "farm": "Ferme",
+    "coal": "Mine de Charbon", 
+    "iron": "Mine de Fer",
+    "wood": "Parc à Bois"
+  }
+}

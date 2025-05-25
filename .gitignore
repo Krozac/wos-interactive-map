@@ -1,2 +1,6 @@
 node_modules/
+dist/
+build/
 .env
+mongo-data/
+*.log

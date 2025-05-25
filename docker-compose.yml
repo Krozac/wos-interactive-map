@@ -2,19 +2,22 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "5000:${APP_PROD_PORT}"
+      - "5000:5000"
     depends_on:
       - mongodb
     environment:
-        MONGO_URI: ${MONGO_URI}
-        ALLOWED_HOST: ${ALLOWED_HOST}
+      MONGO_URI: mongodb://mongodb:27017/mapBuildings
+      ALLOWED_HOST: whiteout-map.krozac.fr
+
   mongodb:
     image: mongo:latest
     restart: always
     ports:
-      - "27017:${DB_PROD_PORT}"
+      - "27017:27017"
     volumes:
       - mongo-data:/data/db
 

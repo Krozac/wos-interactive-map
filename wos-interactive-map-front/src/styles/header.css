@@ -1,0 +1,25 @@
+#Head{
+    display: grid;
+    grid-template-columns: 5fr 10fr repeat(2, 1fr) 3fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+
+#User{
+    display: flex;
+    background: #0c3867;
+    border-radius: 16px;
+    padding:1px;
+    z-index:100;
+    grid-area: 1 / 5 / 2 / 6;
+    line-height: 1.2;
+    height:60px;
+}
+
+#logoutButton{
+    grid-area: 1 / 4 / 2 / 5;
+    font-size: 30px;
+    z-index:100;
+}

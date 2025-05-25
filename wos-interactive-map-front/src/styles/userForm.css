@@ -1,0 +1,64 @@
+/* userForm.css */
+
+.user-form {
+  background: #1c4a7b;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 320px;
+  margin: 10px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-family: "Rowdies", sans-serif;
+  color: white;
+}
+
+.user-form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.user-form input {
+  margin-top: 6px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.user-form input:focus {
+  outline: 2px solid #3992ef;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.form-actions button {
+  background: #3992ef;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.form-actions button:hover {
+  background: #337ecc;
+}
+
+.form-actions button[type="button"] {
+  background: transparent;
+  color: #f88;
+}
+
+.form-actions button[type="button"]:hover {
+  background: rgba(248, 128, 128, 0.1);
+}

@@ -1,0 +1,94 @@
+/* login.css */
+
+body {
+    background: url(/img/home_bg.e9720be.png) no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .home_logo {
+    position: absolute;
+    left: 50%;
+    top: 20px; /* Optional: add some top spacing */
+    transform: translateX(-50%);
+    user-select: none;
+  }
+  
+  #overlay {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1c4a7b;
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    border: 2px solid white;
+    z-index: 1000;
+    font-weight: 300;
+  }
+  
+  #modal h2 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #82b0d9;
+    text-align: center;
+  }
+  
+  #modal p {
+    margin: 10px 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  #idForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  #modalPlayerId {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+  }
+  
+  #idForm button {
+    background-color: #007fff;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  
+  #idForm button:hover {
+    background-color: #005bb5;
+  }
+  
+  #modalError {
+    color: red;
+    text-align: center;
+    margin-top: 5px;
+    display: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  

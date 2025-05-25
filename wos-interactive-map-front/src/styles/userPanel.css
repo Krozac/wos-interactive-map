@@ -1,0 +1,25 @@
+/* userPanel.css */
+#Users {
+  padding: 16px;
+}
+
+.user-panel-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.user-panel-toolbar button {
+  padding: 8px 16px;
+  background: #3992ef;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Rowdies", sans-serif;
+  transition: background 0.2s;
+}
+
+.user-panel-toolbar button:hover {
+  background: #337ecc;
+}

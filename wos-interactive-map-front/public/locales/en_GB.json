@@ -1,0 +1,20 @@
+{
+  "language-name": "English",
+  "language-flag": "https://www.drapeauxdespays.fr/data/flags/h80/gb.png",
+  "menu-login": "Login",
+  "menu-login-prompt": "Please log in to access the interactive map.",
+  "menu-login-preview": "Enter your game ID",
+  "menu-buildings": "Buildings",
+  "menu-territory": "Territory",
+  "menu-members": "Members",
+  "menu-gift": "Gift",
+  "menu-alliance": "Alliance",
+  "furnace-level": "Stove Level: ",
+  "kid": "Region: ",
+  "buildings": {
+    "banner": "Banner",
+    "furnace": "Furnace",
+    "hq": "Headquarters",
+    "trap": "Trap"
+  }
+}

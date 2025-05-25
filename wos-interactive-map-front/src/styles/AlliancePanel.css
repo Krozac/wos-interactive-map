@@ -1,0 +1,57 @@
+#AlliancePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 320px;
+  margin: 0 auto;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+.alliance {
+    display: flex;
+    margin-bottom: 15px;
+    width:250px;
+    height:80px;
+    padding:0;
+    background:#3992ef;
+    color:white;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    border-bottom:solid 2px #337ecc;
+    box-shadow: 0px 1px 2px black;
+}
+
+.alliance:hover {
+  background-color: #337ecc;
+}
+
+.alliance-color-box {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    margin-left: 10px;
+    border-radius: 5px;
+    height: 85px;
+    width: 60px;
+    border-top:solid 2px white;   
+    filter: drop-shadow(0px 0px 4px black);
+}
+
+.alliance-info {
+      flex:right;
+    margin-left:10px;
+}
+
+.alliance-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.alliance-acronym {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
