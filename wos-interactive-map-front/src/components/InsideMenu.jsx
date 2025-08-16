@@ -3,7 +3,7 @@ import BuildingsPanel from './Menus/BuildingsPanel';
 import UserPanel from './Menus/UserPanel';
 import TerritoryPanel from './Menus/TerritoryPanel';
 import AlliancePanel from './Menus/AlliancePanel';
-
+import GiftPanel from './Menus/GiftPanel';
 
 export default function InsideMenu({   active,
   setSelectedBuildingType,
@@ -19,6 +19,7 @@ export default function InsideMenu({   active,
         <UserPanel />
       </div>
       <div className={active === 'Gift' ? 'visible' : ''}>
+        <GiftPanel />
       </div>
       <div className={active === 'Furnace-Placed' ? 'visible' : ''}>
         <TerritoryPanel />

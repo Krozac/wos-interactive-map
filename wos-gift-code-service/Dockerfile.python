@@ -1,0 +1,32 @@
+FROM ubuntu:22.04
+
+WORKDIR /app
+
+# Install system dependencies, Python, and execstack
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3.10-venv \
+    python3-pip \
+    build-essential \
+    libgomp1 \
+    curl \
+    execstack \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy and install Python requirements
+COPY requirements.txt .
+RUN python3 -m pip install --upgrade pip \
+    && python3 -m pip install --no-cache-dir -r requirements.txt
+
+# Fix executable stack issue for ONNX Runtime
+RUN set -e && \
+    ONNX_SO=$(python3 -c "import onnxruntime; import os; print(os.path.join(os.path.dirname(onnxruntime.__file__), 'capi', 'onnxruntime_pybind11_state.cpython-310-x86_64-linux-gnu.so'))") && \
+    execstack -c $ONNX_SO
+
+# Copy app code
+COPY solver_api.py .
+COPY models ./models
+COPY gift_captchasolver.py .
+
+EXPOSE 5001
+CMD ["uvicorn", "solver_api:app", "--host", "0.0.0.0", "--port", "5001", "--reload"]

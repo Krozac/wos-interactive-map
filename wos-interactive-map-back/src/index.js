@@ -24,6 +24,8 @@ const tokens = {};
 
 await connectDB();
 
+const app = express();
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -32,7 +34,7 @@ function isValidToken(token) {
 }
 
 // 🧠 Vite build output directory
-// dev const clientDist = path.resolve(__dirname, '..', '..', 'wos-interactive-map-front', 'dist');
+//const clientDist = path.resolve(__dirname, '..', '..', 'wos-interactive-map-front', 'dist');
 const clientDist = path.resolve(__dirname, '..', 'public');
 
 
@@ -43,10 +45,14 @@ app.use(express.static(clientDist));
 import buildingsRouter from './routes/buildings.js';
 import guildsRouter from './routes/guilds.js';
 import userRouter from './routes/user.js';
+import redeemRouter from './routes/redeemRoutes.js';
+import jobRouter from './routes/jobs.js'
 
 app.use('/api/buildings', buildingsRouter);
 app.use('/api/guilds', guildsRouter);
 app.use('/api/users', userRouter);
+app.use('/api/redeem', redeemRouter);
+app.use('/api/jobs', jobRouter);
 
 // 🔐 Middleware for auth (for protected API routes)
 app.use((req, res, next) => {

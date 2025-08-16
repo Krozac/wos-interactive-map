@@ -49,7 +49,6 @@ function initControls(controls,setSelectedCell){
         const LocalX = Math.floor(localPoint.x) ;
         const LocalY = Math.floor(localPoint.y) ;
 
-        console.log(setSelectedCell);
         setSelectedCell({
             x: LocalX,
             y: LocalY,
@@ -79,7 +78,7 @@ function initControls(controls,setSelectedCell){
 
             /*
             document.getElementById("status").innerHTML = cell.building.type;
-            document.getElementById("x").innerHTML = "x: " + cell.positionx;
+            document.getElementById("x").innerHTML = "x: " + cell.positionx;""
             document.getElementById("y").innerHTML = "y: " + cell.positiony;
             document.getElementById("img-cell").src = cell.path;
             */

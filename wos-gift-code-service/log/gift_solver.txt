@@ -1,0 +1,617 @@
+2025-08-16 10:31:23,762 - ONNX Runtime or required libraries not found. Captcha solving disabled.
+2025-08-16 10:33:48,792 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 10:33:48,792 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model_metadata.json
+2025-08-16 10:33:48,792 - ONNX model file not found at C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 10:33:49,306 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 10:33:49,318 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model_metadata.json
+2025-08-16 10:33:49,318 - ONNX model file not found at C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 10:33:49,542 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 10:33:49,542 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model_metadata.json
+2025-08-16 10:33:49,542 - ONNX model file not found at C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 10:54:08,148 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:08,526 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:08,906 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:09,295 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:09,680 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:10,056 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:10,434 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:10,820 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:11,242 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:11,619 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:12,016 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:12,399 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:12,782 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:13,161 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:13,544 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:13,922 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:14,298 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:14,677 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:15,053 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:15,435 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:15,811 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:16,187 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:16,571 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:16,958 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:17,339 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:17,721 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:18,103 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:18,480 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:18,871 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:54:19,246 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:24,535 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:24,910 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:25,286 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:25,654 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:26,018 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:26,387 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:26,753 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:27,120 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:27,486 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:27,863 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:28,229 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:28,603 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:28,977 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:29,344 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:29,718 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:30,088 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:30,454 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:30,817 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:31,186 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:31,560 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:31,927 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:32,294 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:32,661 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:33,031 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:33,401 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:33,766 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:34,135 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:34,503 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:34,867 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:56:35,231 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:49,087 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:49,973 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:50,859 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:51,756 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:52,669 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:53,557 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:54,451 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:55,404 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:56,293 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:57,178 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:58,074 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:58,966 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 10:59:59,869 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:00,804 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:01,763 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:02,646 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:03,545 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:04,450 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:05,335 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:06,228 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:07,115 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:08,005 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:08,910 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:09,798 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:10,687 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:11,573 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:12,464 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:13,364 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:14,251 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:15,145 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:51,333 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:52,232 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:53,116 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:54,005 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:54,906 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:55,802 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:56,685 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:57,582 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:58,471 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:00:59,372 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:00,252 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:01,175 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:02,062 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:02,955 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:03,852 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:04,746 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:05,639 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:06,530 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:07,419 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:08,307 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:09,199 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:10,104 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:10,991 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:11,876 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:12,762 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:13,660 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:14,559 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:15,440 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:16,334 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:17,215 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:53,410 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:54,306 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:55,199 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:56,090 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:56,986 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:57,890 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:58,782 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:01:59,682 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:00,570 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:01,469 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:02,357 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:03,240 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:04,164 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:05,052 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:05,936 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:06,838 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:07,728 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:08,626 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:09,521 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:10,415 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:11,303 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:12,196 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:13,328 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:14,221 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:15,113 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:15,999 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:16,892 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:17,781 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:18,665 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:02:19,551 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:19,613 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:20,505 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:21,389 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:22,261 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:23,138 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:24,021 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:24,893 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:25,765 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:26,646 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:27,518 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:28,397 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:29,282 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:30,161 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:31,033 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:31,902 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:32,786 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:33,656 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:34,530 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:35,408 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:36,281 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:37,172 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:38,039 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:38,918 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:39,792 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:40,673 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:41,550 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:42,433 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:43,307 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:44,181 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:03:45,065 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:51,033 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:51,914 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:52,801 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:53,700 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:54,619 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:55,505 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:56,406 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:57,315 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:58,198 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:59,094 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:05:59,986 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:00,908 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:01,824 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:02,724 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:03,630 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:04,513 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:05,405 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:06,304 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:07,196 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:08,091 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:08,984 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:09,886 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:10,786 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:11,667 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:12,563 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:13,455 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:14,344 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:15,227 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:06:16,116 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:07:03,239 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:07:04,122 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:07:05,010 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:07:05,898 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:07:06,784 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:07:07,660 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:00,658 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:01,547 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:02,427 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:03,310 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:04,190 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:44,024 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:44,913 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:45,791 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:46,675 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:47,554 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:48,443 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:08:49,324 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:09:50,339 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:09:51,215 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:09:52,110 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:09:53,001 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:13:39,513 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 11:13:39,513 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model_metadata.json
+2025-08-16 11:13:39,513 - ONNX model file not found at C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 11:13:40,016 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 11:13:40,016 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model_metadata.json
+2025-08-16 11:13:40,016 - ONNX model file not found at C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 11:13:40,037 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 11:13:40,037 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model_metadata.json
+2025-08-16 11:13:40,037 - ONNX model file not found at C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\models\captcha_model.onnx
+2025-08-16 11:13:55,520 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:13:56,418 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:13:57,303 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:13:58,197 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:13:59,082 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:13:59,970 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:00,851 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:01,748 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:02,624 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:03,505 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:04,402 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:05,286 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:06,174 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:07,056 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:14:07,932 - ONNX model not initialized. Cannot solve captcha for FID None.
+2025-08-16 11:17:49,077 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:17:49,077 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model_metadata.json
+2025-08-16 11:17:49,077 - ONNX model file not found at C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:17:49,098 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:17:49,098 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model_metadata.json
+2025-08-16 11:17:49,098 - ONNX model file not found at C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:18:03,644 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:18:03,644 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model_metadata.json
+2025-08-16 11:18:03,644 - Loading ONNX model...
+2025-08-16 11:18:03,674 - Loading model metadata...
+2025-08-16 11:18:03,682 - Performing test inference...
+2025-08-16 11:18:03,824 - ONNX model test successful. Model ready for captcha solving.
+2025-08-16 11:18:03,846 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:18:03,847 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model_metadata.json
+2025-08-16 11:18:03,847 - Loading ONNX model...
+2025-08-16 11:18:03,865 - Loading model metadata...
+2025-08-16 11:18:03,865 - Performing test inference...
+2025-08-16 11:18:03,866 - ONNX model test successful. Model ready for captcha solving.
+2025-08-16 11:18:09,451 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:18:09,451 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model_metadata.json
+2025-08-16 11:18:09,452 - Loading ONNX model...
+2025-08-16 11:18:09,472 - Loading model metadata...
+2025-08-16 11:18:09,472 - Performing test inference...
+2025-08-16 11:18:09,481 - ONNX model test successful. Model ready for captcha solving.
+2025-08-16 11:18:09,975 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:18:09,975 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model_metadata.json
+2025-08-16 11:18:09,975 - Loading ONNX model...
+2025-08-16 11:18:09,994 - Loading model metadata...
+2025-08-16 11:18:09,995 - Performing test inference...
+2025-08-16 11:18:10,002 - ONNX model test successful. Model ready for captcha solving.
+2025-08-16 11:18:10,023 - Looking for ONNX model at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model.onnx
+2025-08-16 11:18:10,024 - Looking for metadata at: C:\Users\FlowUP\Documents\Projets\006.wos-interractive-map\wos-gift-code-service\models\captcha_model_metadata.json
+2025-08-16 11:18:10,024 - Loading ONNX model...
+2025-08-16 11:18:10,040 - Loading model metadata...
+2025-08-16 11:18:10,041 - Performing test inference...
+2025-08-16 11:18:10,042 - ONNX model test successful. Model ready for captcha solving.
+2025-08-16 11:18:20,772 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BB97ECF0>
+2025-08-16 11:18:20,772 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:18:21,658 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BAEDD850>
+2025-08-16 11:18:21,658 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:18:22,549 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BB97ECF0>
+2025-08-16 11:18:22,549 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:18:23,439 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BB97ECF0>
+2025-08-16 11:18:23,439 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:18:24,319 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BB97ECF0>
+2025-08-16 11:18:24,319 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:18:25,200 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BB97ECF0>
+2025-08-16 11:18:25,200 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:18:26,084 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BB97ECF0>
+2025-08-16 11:18:26,084 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:18:26,958 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BB97ECF0>
+2025-08-16 11:18:26,958 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:19:43,886 - Error preprocessing image: cannot identify image file <_io.BytesIO object at 0x00000223BB97ECF0>
+2025-08-16 11:19:43,886 - [Solver] FID None, Attempt 1: Failed to preprocess image
+2025-08-16 11:21:06,819 - [Solver] FID None, Attempt 1: ONNX raw result='ILZX' (confidence: 10.510, 0.002s)
+2025-08-16 11:21:06,819 - [Solver] FID None, Attempt 1: Success. Solved: ILZX
+2025-08-16 11:21:07,910 - [Solver] FID None, Attempt 1: ONNX raw result='XWWR' (confidence: 4.056, 0.001s)
+2025-08-16 11:21:07,910 - [Solver] FID None, Attempt 1: Success. Solved: XWWR
+2025-08-16 11:21:09,002 - [Solver] FID None, Attempt 1: ONNX raw result='XPSE' (confidence: 21.105, 0.001s)
+2025-08-16 11:21:09,003 - [Solver] FID None, Attempt 1: Success. Solved: XPSE
+2025-08-16 11:22:04,223 - [Solver] FID None, Attempt 1: ONNX raw result='JMT2' (confidence: 17.009, 0.001s)
+2025-08-16 11:22:04,223 - [Solver] FID None, Attempt 1: Success. Solved: JMT2
+2025-08-16 11:22:05,305 - [Solver] FID None, Attempt 1: ONNX raw result='7XT5' (confidence: 14.798, 0.001s)
+2025-08-16 11:22:05,305 - [Solver] FID None, Attempt 1: Success. Solved: 7XT5
+2025-08-16 11:22:06,379 - [Solver] FID None, Attempt 1: ONNX raw result='5MLD' (confidence: 19.166, 0.001s)
+2025-08-16 11:22:06,379 - [Solver] FID None, Attempt 1: Success. Solved: 5MLD
+2025-08-16 11:22:07,464 - [Solver] FID None, Attempt 1: ONNX raw result='9SPW' (confidence: 17.729, 0.001s)
+2025-08-16 11:22:07,470 - [Solver] FID None, Attempt 1: Success. Solved: 9SPW
+2025-08-16 11:22:08,560 - [Solver] FID None, Attempt 1: ONNX raw result='DX9B' (confidence: 20.000, 0.001s)
+2025-08-16 11:22:08,560 - [Solver] FID None, Attempt 1: Success. Solved: DX9B
+2025-08-16 11:22:09,645 - [Solver] FID None, Attempt 1: ONNX raw result='CZQS' (confidence: 16.306, 0.001s)
+2025-08-16 11:22:09,645 - [Solver] FID None, Attempt 1: Success. Solved: CZQS
+2025-08-16 11:22:10,732 - [Solver] FID None, Attempt 1: ONNX raw result='B3WF' (confidence: 8.326, 0.001s)
+2025-08-16 11:22:10,732 - [Solver] FID None, Attempt 1: Success. Solved: B3WF
+2025-08-16 11:22:11,792 - [Solver] FID None, Attempt 1: ONNX raw result='SAPM' (confidence: 20.865, 0.001s)
+2025-08-16 11:22:11,792 - [Solver] FID None, Attempt 1: Success. Solved: SAPM
+2025-08-16 11:22:12,859 - [Solver] FID None, Attempt 1: ONNX raw result='4C5L' (confidence: 14.471, 0.001s)
+2025-08-16 11:22:12,859 - [Solver] FID None, Attempt 1: Success. Solved: 4C5L
+2025-08-16 11:22:13,954 - [Solver] FID None, Attempt 1: ONNX raw result='UUGF' (confidence: 14.454, 0.001s)
+2025-08-16 11:22:13,954 - [Solver] FID None, Attempt 1: Success. Solved: UUGF
+2025-08-16 11:22:15,027 - [Solver] FID None, Attempt 1: ONNX raw result='3QWZ' (confidence: 19.217, 0.001s)
+2025-08-16 11:22:15,027 - [Solver] FID None, Attempt 1: Success. Solved: 3QWZ
+2025-08-16 11:22:16,126 - [Solver] FID None, Attempt 1: ONNX raw result='IW2V' (confidence: 14.256, 0.001s)
+2025-08-16 11:22:16,126 - [Solver] FID None, Attempt 1: Success. Solved: IW2V
+2025-08-16 11:22:17,219 - [Solver] FID None, Attempt 1: ONNX raw result='ZKDX' (confidence: 13.087, 0.001s)
+2025-08-16 11:22:17,219 - [Solver] FID None, Attempt 1: Success. Solved: ZKDX
+2025-08-16 11:22:18,300 - [Solver] FID None, Attempt 1: ONNX raw result='GUM4' (confidence: 14.358, 0.001s)
+2025-08-16 11:22:18,300 - [Solver] FID None, Attempt 1: Success. Solved: GUM4
+2025-08-16 11:22:19,380 - [Solver] FID None, Attempt 1: ONNX raw result='BGK4' (confidence: 17.564, 0.001s)
+2025-08-16 11:22:19,380 - [Solver] FID None, Attempt 1: Success. Solved: BGK4
+2025-08-16 11:22:20,476 - [Solver] FID None, Attempt 1: ONNX raw result='TAZU' (confidence: 14.898, 0.001s)
+2025-08-16 11:22:20,476 - [Solver] FID None, Attempt 1: Success. Solved: TAZU
+2025-08-16 11:22:21,559 - [Solver] FID None, Attempt 1: ONNX raw result='4NY4' (confidence: 10.450, 0.001s)
+2025-08-16 11:22:21,559 - [Solver] FID None, Attempt 1: Success. Solved: 4NY4
+2025-08-16 11:22:22,628 - [Solver] FID None, Attempt 1: ONNX raw result='ZRD2' (confidence: 12.728, 0.001s)
+2025-08-16 11:22:22,628 - [Solver] FID None, Attempt 1: Success. Solved: ZRD2
+2025-08-16 11:22:23,721 - [Solver] FID None, Attempt 1: ONNX raw result='USNQ' (confidence: 16.739, 0.001s)
+2025-08-16 11:22:23,722 - [Solver] FID None, Attempt 1: Success. Solved: USNQ
+2025-08-16 11:22:24,798 - [Solver] FID None, Attempt 1: ONNX raw result='YD5M' (confidence: 20.192, 0.001s)
+2025-08-16 11:22:24,798 - [Solver] FID None, Attempt 1: Success. Solved: YD5M
+2025-08-16 11:22:25,900 - [Solver] FID None, Attempt 1: ONNX raw result='8YQ2' (confidence: 16.725, 0.001s)
+2025-08-16 11:22:25,900 - [Solver] FID None, Attempt 1: Success. Solved: 8YQ2
+2025-08-16 11:22:26,984 - [Solver] FID None, Attempt 1: ONNX raw result='7LJD' (confidence: 16.068, 0.001s)
+2025-08-16 11:22:26,984 - [Solver] FID None, Attempt 1: Success. Solved: 7LJD
+2025-08-16 11:22:28,071 - [Solver] FID None, Attempt 1: ONNX raw result='TXZR' (confidence: 16.294, 0.001s)
+2025-08-16 11:22:28,071 - [Solver] FID None, Attempt 1: Success. Solved: TXZR
+2025-08-16 11:22:29,148 - [Solver] FID None, Attempt 1: ONNX raw result='SPB9' (confidence: 15.595, 0.001s)
+2025-08-16 11:22:29,148 - [Solver] FID None, Attempt 1: Success. Solved: SPB9
+2025-08-16 11:22:30,227 - [Solver] FID None, Attempt 1: ONNX raw result='JB7K' (confidence: 23.128, 0.001s)
+2025-08-16 11:22:30,228 - [Solver] FID None, Attempt 1: Success. Solved: JB7K
+2025-08-16 11:22:31,311 - [Solver] FID None, Attempt 1: ONNX raw result='88PJ' (confidence: 21.970, 0.001s)
+2025-08-16 11:22:31,311 - [Solver] FID None, Attempt 1: Success. Solved: 88PJ
+2025-08-16 11:22:32,388 - [Solver] FID None, Attempt 1: ONNX raw result='UUEK' (confidence: 18.302, 0.001s)
+2025-08-16 11:22:32,388 - [Solver] FID None, Attempt 1: Success. Solved: UUEK
+2025-08-16 11:22:33,475 - [Solver] FID None, Attempt 1: ONNX raw result='GEWR' (confidence: 23.000, 0.001s)
+2025-08-16 11:22:33,476 - [Solver] FID None, Attempt 1: Success. Solved: GEWR
+2025-08-16 11:22:34,559 - [Solver] FID None, Attempt 1: ONNX raw result='Y66L' (confidence: 18.188, 0.001s)
+2025-08-16 11:22:34,559 - [Solver] FID None, Attempt 1: Success. Solved: Y66L
+2025-08-16 11:22:35,636 - [Solver] FID None, Attempt 1: ONNX raw result='BKEE' (confidence: 9.999, 0.001s)
+2025-08-16 11:22:35,636 - [Solver] FID None, Attempt 1: Success. Solved: BKEE
+2025-08-16 11:22:36,702 - [Solver] FID None, Attempt 1: ONNX raw result='U4FT' (confidence: 12.786, 0.001s)
+2025-08-16 11:22:36,702 - [Solver] FID None, Attempt 1: Success. Solved: U4FT
+2025-08-16 11:22:37,767 - [Solver] FID None, Attempt 1: ONNX raw result='ECQB' (confidence: 12.579, 0.001s)
+2025-08-16 11:22:37,768 - [Solver] FID None, Attempt 1: Success. Solved: ECQB
+2025-08-16 11:22:38,842 - [Solver] FID None, Attempt 1: ONNX raw result='QR7S' (confidence: 13.303, 0.001s)
+2025-08-16 11:22:38,842 - [Solver] FID None, Attempt 1: Success. Solved: QR7S
+2025-08-16 11:23:35,825 - [Solver] FID None, Attempt 1: ONNX raw result='K9H5' (confidence: 13.826, 0.001s)
+2025-08-16 11:23:35,825 - [Solver] FID None, Attempt 1: Success. Solved: K9H5
+2025-08-16 11:23:36,908 - [Solver] FID None, Attempt 1: ONNX raw result='QJFU' (confidence: 8.526, 0.001s)
+2025-08-16 11:23:36,908 - [Solver] FID None, Attempt 1: Success. Solved: QJFU
+2025-08-16 11:23:37,984 - [Solver] FID None, Attempt 1: ONNX raw result='WTBU' (confidence: 15.173, 0.001s)
+2025-08-16 11:23:37,984 - [Solver] FID None, Attempt 1: Success. Solved: WTBU
+2025-08-16 11:23:39,058 - [Solver] FID None, Attempt 1: ONNX raw result='5Z79' (confidence: 22.756, 0.001s)
+2025-08-16 11:23:39,058 - [Solver] FID None, Attempt 1: Success. Solved: 5Z79
+2025-08-16 11:23:59,770 - [Solver] FID None, Attempt 1: ONNX raw result='JYWZ' (confidence: 11.925, 0.001s)
+2025-08-16 11:23:59,770 - [Solver] FID None, Attempt 1: Success. Solved: JYWZ
+2025-08-16 11:24:00,840 - [Solver] FID None, Attempt 1: ONNX raw result='DEVK' (confidence: 22.195, 0.001s)
+2025-08-16 11:24:00,840 - [Solver] FID None, Attempt 1: Success. Solved: DEVK
+2025-08-16 11:24:02,074 - [Solver] FID None, Attempt 1: ONNX raw result='QB7J' (confidence: 11.308, 0.001s)
+2025-08-16 11:24:02,074 - [Solver] FID None, Attempt 1: Success. Solved: QB7J
+2025-08-16 11:24:03,132 - [Solver] FID None, Attempt 1: ONNX raw result='VWMQ' (confidence: 21.166, 0.001s)
+2025-08-16 11:24:03,132 - [Solver] FID None, Attempt 1: Success. Solved: VWMQ
+2025-08-16 11:24:04,211 - [Solver] FID None, Attempt 1: ONNX raw result='RVQD' (confidence: 13.977, 0.001s)
+2025-08-16 11:24:04,211 - [Solver] FID None, Attempt 1: Success. Solved: RVQD
+2025-08-16 11:24:05,280 - [Solver] FID None, Attempt 1: ONNX raw result='78PT' (confidence: 14.284, 0.001s)
+2025-08-16 11:24:05,280 - [Solver] FID None, Attempt 1: Success. Solved: 78PT
+2025-08-16 11:24:06,338 - [Solver] FID None, Attempt 1: ONNX raw result='FXRB' (confidence: 13.913, 0.001s)
+2025-08-16 11:24:06,338 - [Solver] FID None, Attempt 1: Success. Solved: FXRB
+2025-08-16 11:24:07,414 - [Solver] FID None, Attempt 1: ONNX raw result='9U9M' (confidence: 18.968, 0.001s)
+2025-08-16 11:24:07,414 - [Solver] FID None, Attempt 1: Success. Solved: 9U9M
+2025-08-16 11:27:14,475 - [Solver] FID None, Attempt 1: ONNX raw result='JLIH' (confidence: 8.610, 0.001s)
+2025-08-16 11:27:14,475 - [Solver] FID None, Attempt 1: Success. Solved: JLIH
+2025-08-16 11:27:15,543 - [Solver] FID None, Attempt 1: ONNX raw result='EDPB' (confidence: 17.593, 0.001s)
+2025-08-16 11:27:15,543 - [Solver] FID None, Attempt 1: Success. Solved: EDPB
+2025-08-16 11:27:16,639 - [Solver] FID None, Attempt 1: ONNX raw result='BHK7' (confidence: 13.917, 0.001s)
+2025-08-16 11:27:16,639 - [Solver] FID None, Attempt 1: Success. Solved: BHK7
+2025-08-16 11:27:17,711 - [Solver] FID None, Attempt 1: ONNX raw result='YBKZ' (confidence: 14.409, 0.001s)
+2025-08-16 11:27:17,711 - [Solver] FID None, Attempt 1: Success. Solved: YBKZ
+2025-08-16 11:27:18,794 - [Solver] FID None, Attempt 1: ONNX raw result='MZUD' (confidence: 10.379, 0.001s)
+2025-08-16 11:27:18,794 - [Solver] FID None, Attempt 1: Success. Solved: MZUD
+2025-08-16 11:27:19,866 - [Solver] FID None, Attempt 1: ONNX raw result='66PH' (confidence: 15.252, 0.001s)
+2025-08-16 11:27:19,867 - [Solver] FID None, Attempt 1: Success. Solved: 66PH
+2025-08-16 11:27:20,974 - [Solver] FID None, Attempt 1: ONNX raw result='B4PA' (confidence: 12.192, 0.001s)
+2025-08-16 11:27:20,978 - [Solver] FID None, Attempt 1: Success. Solved: B4PA
+2025-08-16 11:27:22,073 - [Solver] FID None, Attempt 1: ONNX raw result='U2YQ' (confidence: 16.830, 0.001s)
+2025-08-16 11:27:22,073 - [Solver] FID None, Attempt 1: Success. Solved: U2YQ
+2025-08-16 11:27:23,157 - [Solver] FID None, Attempt 1: ONNX raw result='P7DD' (confidence: 22.617, 0.001s)
+2025-08-16 11:27:23,157 - [Solver] FID None, Attempt 1: Success. Solved: P7DD
+2025-08-16 11:27:24,254 - [Solver] FID None, Attempt 1: ONNX raw result='24UY' (confidence: 22.857, 0.001s)
+2025-08-16 11:27:24,254 - [Solver] FID None, Attempt 1: Success. Solved: 24UY
+2025-08-16 11:27:25,356 - [Solver] FID None, Attempt 1: ONNX raw result='3A6D' (confidence: 19.410, 0.001s)
+2025-08-16 11:27:25,356 - [Solver] FID None, Attempt 1: Success. Solved: 3A6D
+2025-08-16 11:27:26,501 - [Solver] FID None, Attempt 1: ONNX raw result='XLVK' (confidence: 17.854, 0.001s)
+2025-08-16 11:27:26,501 - [Solver] FID None, Attempt 1: Success. Solved: XLVK
+2025-08-16 11:27:27,594 - [Solver] FID None, Attempt 1: ONNX raw result='QL6C' (confidence: 14.895, 0.001s)
+2025-08-16 11:27:27,594 - [Solver] FID None, Attempt 1: Success. Solved: QL6C
+2025-08-16 11:27:28,698 - [Solver] FID None, Attempt 1: ONNX raw result='ETAC' (confidence: 15.314, 0.001s)
+2025-08-16 11:27:28,698 - [Solver] FID None, Attempt 1: Success. Solved: ETAC
+2025-08-16 11:27:29,760 - [Solver] FID None, Attempt 1: ONNX raw result='BUDM' (confidence: 11.291, 0.001s)
+2025-08-16 11:27:29,760 - [Solver] FID None, Attempt 1: Success. Solved: BUDM
+2025-08-16 11:27:30,847 - [Solver] FID None, Attempt 1: ONNX raw result='MVRA' (confidence: 18.135, 0.001s)
+2025-08-16 11:27:30,847 - [Solver] FID None, Attempt 1: Success. Solved: MVRA
+2025-08-16 11:27:31,955 - [Solver] FID None, Attempt 1: ONNX raw result='3XQK' (confidence: 18.059, 0.001s)
+2025-08-16 11:27:31,955 - [Solver] FID None, Attempt 1: Success. Solved: 3XQK
+2025-08-16 11:27:33,059 - [Solver] FID None, Attempt 1: ONNX raw result='YWTC' (confidence: 12.769, 0.001s)
+2025-08-16 11:27:33,059 - [Solver] FID None, Attempt 1: Success. Solved: YWTC
+2025-08-16 11:27:34,123 - [Solver] FID None, Attempt 1: ONNX raw result='C8F9' (confidence: 14.830, 0.001s)
+2025-08-16 11:27:34,124 - [Solver] FID None, Attempt 1: Success. Solved: C8F9
+2025-08-16 11:27:35,190 - [Solver] FID None, Attempt 1: ONNX raw result='VKAM' (confidence: 9.801, 0.001s)
+2025-08-16 11:27:35,191 - [Solver] FID None, Attempt 1: Success. Solved: VKAM
+2025-08-16 11:27:36,263 - [Solver] FID None, Attempt 1: ONNX raw result='BDZN' (confidence: 13.871, 0.001s)
+2025-08-16 11:27:36,263 - [Solver] FID None, Attempt 1: Success. Solved: BDZN
+2025-08-16 11:27:37,345 - [Solver] FID None, Attempt 1: ONNX raw result='G5JC' (confidence: 16.252, 0.001s)
+2025-08-16 11:27:37,388 - [Solver] FID None, Attempt 1: Success. Solved: G5JC
+2025-08-16 11:27:38,483 - [Solver] FID None, Attempt 1: ONNX raw result='3QKE' (confidence: 12.531, 0.001s)
+2025-08-16 11:27:38,484 - [Solver] FID None, Attempt 1: Success. Solved: 3QKE
+2025-08-16 11:27:39,571 - [Solver] FID None, Attempt 1: ONNX raw result='57ST' (confidence: 15.326, 0.001s)
+2025-08-16 11:27:39,571 - [Solver] FID None, Attempt 1: Success. Solved: 57ST
+2025-08-16 11:27:40,674 - [Solver] FID None, Attempt 1: ONNX raw result='RKCB' (confidence: 11.076, 0.001s)
+2025-08-16 11:27:40,674 - [Solver] FID None, Attempt 1: Success. Solved: RKCB
+2025-08-16 11:27:41,759 - [Solver] FID None, Attempt 1: ONNX raw result='QDNL' (confidence: 13.381, 0.001s)
+2025-08-16 11:27:41,759 - [Solver] FID None, Attempt 1: Success. Solved: QDNL
+2025-08-16 11:27:42,873 - [Solver] FID None, Attempt 1: ONNX raw result='39EZ' (confidence: 19.862, 0.001s)
+2025-08-16 11:27:42,873 - [Solver] FID None, Attempt 1: Success. Solved: 39EZ
+2025-08-16 11:27:43,978 - [Solver] FID None, Attempt 1: ONNX raw result='W3SA' (confidence: 15.909, 0.001s)
+2025-08-16 11:27:43,979 - [Solver] FID None, Attempt 1: Success. Solved: W3SA
+2025-08-16 11:27:45,059 - [Solver] FID None, Attempt 1: ONNX raw result='BUWY' (confidence: 19.680, 0.001s)
+2025-08-16 11:27:45,059 - [Solver] FID None, Attempt 1: Success. Solved: BUWY
+2025-08-16 11:27:46,170 - [Solver] FID None, Attempt 1: ONNX raw result='YHYV' (confidence: 19.236, 0.001s)
+2025-08-16 11:27:46,170 - [Solver] FID None, Attempt 1: Success. Solved: YHYV
+2025-08-16 11:28:18,009 - [Solver] FID None, Attempt 1: ONNX raw result='UHZQ' (confidence: 28.276, 0.001s)
+2025-08-16 11:28:18,009 - [Solver] FID None, Attempt 1: Success. Solved: UHZQ
+2025-08-16 11:28:19,118 - [Solver] FID None, Attempt 1: ONNX raw result='ZQHE' (confidence: 22.437, 0.002s)
+2025-08-16 11:28:19,118 - [Solver] FID None, Attempt 1: Success. Solved: ZQHE
+2025-08-16 11:28:20,190 - [Solver] FID None, Attempt 1: ONNX raw result='H59C' (confidence: 17.929, 0.001s)
+2025-08-16 11:28:20,190 - [Solver] FID None, Attempt 1: Success. Solved: H59C
+2025-08-16 11:28:21,286 - [Solver] FID None, Attempt 1: ONNX raw result='Y8QZ' (confidence: 21.524, 0.001s)
+2025-08-16 11:28:21,286 - [Solver] FID None, Attempt 1: Success. Solved: Y8QZ
+2025-08-16 11:28:22,379 - [Solver] FID None, Attempt 1: ONNX raw result='BHDV' (confidence: 16.938, 0.001s)
+2025-08-16 11:28:22,379 - [Solver] FID None, Attempt 1: Success. Solved: BHDV
+2025-08-16 11:28:23,497 - [Solver] FID None, Attempt 1: ONNX raw result='YZ5U' (confidence: 19.955, 0.002s)
+2025-08-16 11:28:23,497 - [Solver] FID None, Attempt 1: Success. Solved: YZ5U
+2025-08-16 11:28:24,621 - [Solver] FID None, Attempt 1: ONNX raw result='HX6A' (confidence: 10.506, 0.001s)
+2025-08-16 11:28:24,621 - [Solver] FID None, Attempt 1: Success. Solved: HX6A
+2025-08-16 11:28:25,714 - [Solver] FID None, Attempt 1: ONNX raw result='MZDA' (confidence: 22.239, 0.001s)
+2025-08-16 11:28:25,714 - [Solver] FID None, Attempt 1: Success. Solved: MZDA
+2025-08-16 11:28:26,805 - [Solver] FID None, Attempt 1: ONNX raw result='JVAK' (confidence: 8.890, 0.001s)
+2025-08-16 11:28:26,805 - [Solver] FID None, Attempt 1: Success. Solved: JVAK
+2025-08-16 11:28:27,917 - [Solver] FID None, Attempt 1: ONNX raw result='MBAV' (confidence: 15.112, 0.001s)
+2025-08-16 11:28:27,917 - [Solver] FID None, Attempt 1: Success. Solved: MBAV
+2025-08-16 11:28:29,018 - [Solver] FID None, Attempt 1: ONNX raw result='KG4M' (confidence: 15.460, 0.002s)
+2025-08-16 11:28:29,018 - [Solver] FID None, Attempt 1: Success. Solved: KG4M
+2025-08-16 11:28:30,130 - [Solver] FID None, Attempt 1: ONNX raw result='PSJC' (confidence: 13.799, 0.001s)
+2025-08-16 11:28:30,130 - [Solver] FID None, Attempt 1: Success. Solved: PSJC
+2025-08-16 11:28:31,203 - [Solver] FID None, Attempt 1: ONNX raw result='GG9D' (confidence: 10.997, 0.001s)
+2025-08-16 11:28:31,203 - [Solver] FID None, Attempt 1: Success. Solved: GG9D
+2025-08-16 11:28:32,315 - [Solver] FID None, Attempt 1: ONNX raw result='2ADS' (confidence: 11.898, 0.001s)
+2025-08-16 11:28:32,315 - [Solver] FID None, Attempt 1: Success. Solved: 2ADS
+2025-08-16 11:28:33,427 - [Solver] FID None, Attempt 1: ONNX raw result='2EGW' (confidence: 18.761, 0.001s)
+2025-08-16 11:28:33,427 - [Solver] FID None, Attempt 1: Success. Solved: 2EGW
+2025-08-16 11:28:34,521 - [Solver] FID None, Attempt 1: ONNX raw result='WXMR' (confidence: 16.210, 0.001s)
+2025-08-16 11:28:34,521 - [Solver] FID None, Attempt 1: Success. Solved: WXMR
+2025-08-16 11:28:35,620 - [Solver] FID None, Attempt 1: ONNX raw result='2XB8' (confidence: 17.187, 0.001s)
+2025-08-16 11:28:35,620 - [Solver] FID None, Attempt 1: Success. Solved: 2XB8
+2025-08-16 11:28:36,717 - [Solver] FID None, Attempt 1: ONNX raw result='VBEJ' (confidence: 16.646, 0.001s)
+2025-08-16 11:28:36,717 - [Solver] FID None, Attempt 1: Success. Solved: VBEJ
+2025-08-16 11:28:37,806 - [Solver] FID None, Attempt 1: ONNX raw result='XNFR' (confidence: 12.521, 0.001s)
+2025-08-16 11:28:37,806 - [Solver] FID None, Attempt 1: Success. Solved: XNFR
+2025-08-16 11:28:38,872 - [Solver] FID None, Attempt 1: ONNX raw result='RCNZ' (confidence: 16.946, 0.001s)
+2025-08-16 11:28:38,873 - [Solver] FID None, Attempt 1: Success. Solved: RCNZ
+2025-08-16 11:28:39,968 - [Solver] FID None, Attempt 1: ONNX raw result='C5SY' (confidence: 11.997, 0.001s)
+2025-08-16 11:28:39,968 - [Solver] FID None, Attempt 1: Success. Solved: C5SY
+2025-08-16 11:28:41,092 - [Solver] FID None, Attempt 1: ONNX raw result='MZBJ' (confidence: 6.937, 0.001s)
+2025-08-16 11:28:41,092 - [Solver] FID None, Attempt 1: Success. Solved: MZBJ
+2025-08-16 11:28:42,186 - [Solver] FID None, Attempt 1: ONNX raw result='IFMI' (confidence: 16.983, 0.001s)
+2025-08-16 11:28:42,186 - [Solver] FID None, Attempt 1: Success. Solved: IFMI
+2025-08-16 11:28:43,286 - [Solver] FID None, Attempt 1: ONNX raw result='C6XG' (confidence: 20.851, 0.001s)
+2025-08-16 11:28:43,286 - [Solver] FID None, Attempt 1: Success. Solved: C6XG
+2025-08-16 11:28:44,382 - [Solver] FID None, Attempt 1: ONNX raw result='8XRH' (confidence: 17.364, 0.001s)
+2025-08-16 11:28:44,382 - [Solver] FID None, Attempt 1: Success. Solved: 8XRH
+2025-08-16 11:28:45,502 - [Solver] FID None, Attempt 1: ONNX raw result='UJJN' (confidence: 10.155, 0.001s)
+2025-08-16 11:28:45,502 - [Solver] FID None, Attempt 1: Success. Solved: UJJN
+2025-08-16 11:28:46,586 - [Solver] FID None, Attempt 1: ONNX raw result='TSUB' (confidence: 16.560, 0.001s)
+2025-08-16 11:28:46,586 - [Solver] FID None, Attempt 1: Success. Solved: TSUB
+2025-08-16 11:28:47,681 - [Solver] FID None, Attempt 1: ONNX raw result='QKDM' (confidence: 16.375, 0.001s)
+2025-08-16 11:28:47,681 - [Solver] FID None, Attempt 1: Success. Solved: QKDM
+2025-08-16 11:28:48,781 - [Solver] FID None, Attempt 1: ONNX raw result='DART' (confidence: 9.009, 0.001s)
+2025-08-16 11:28:48,781 - [Solver] FID None, Attempt 1: Success. Solved: DART
+2025-08-16 11:28:49,889 - [Solver] FID None, Attempt 1: ONNX raw result='CUHN' (confidence: 16.486, 0.001s)
+2025-08-16 11:28:49,889 - [Solver] FID None, Attempt 1: Success. Solved: CUHN
+2025-08-16 11:29:21,832 - [Solver] FID None, Attempt 1: ONNX raw result='AJ3C' (confidence: 17.229, 0.001s)
+2025-08-16 11:29:21,832 - [Solver] FID None, Attempt 1: Success. Solved: AJ3C
+2025-08-16 11:29:22,947 - [Solver] FID None, Attempt 1: ONNX raw result='ELUY' (confidence: 5.848, 0.001s)
+2025-08-16 11:29:22,947 - [Solver] FID None, Attempt 1: Success. Solved: ELUY
+2025-08-16 11:29:24,013 - [Solver] FID None, Attempt 1: ONNX raw result='JA2D' (confidence: 10.746, 0.001s)
+2025-08-16 11:29:24,013 - [Solver] FID None, Attempt 1: Success. Solved: JA2D
+2025-08-16 11:29:25,103 - [Solver] FID None, Attempt 1: ONNX raw result='WQUA' (confidence: 9.007, 0.001s)
+2025-08-16 11:29:25,103 - [Solver] FID None, Attempt 1: Success. Solved: WQUA
+2025-08-16 11:29:26,205 - [Solver] FID None, Attempt 1: ONNX raw result='FRFD' (confidence: 5.851, 0.001s)
+2025-08-16 11:29:26,205 - [Solver] FID None, Attempt 1: Success. Solved: FRFD
+2025-08-16 11:29:27,288 - [Solver] FID None, Attempt 1: ONNX raw result='GPCD' (confidence: 15.685, 0.001s)
+2025-08-16 11:29:27,288 - [Solver] FID None, Attempt 1: Success. Solved: GPCD
+2025-08-16 11:29:28,396 - [Solver] FID None, Attempt 1: ONNX raw result='GY3M' (confidence: 18.449, 0.001s)
+2025-08-16 11:29:28,396 - [Solver] FID None, Attempt 1: Success. Solved: GY3M
+2025-08-16 11:29:29,488 - [Solver] FID None, Attempt 1: ONNX raw result='G49K' (confidence: 14.610, 0.001s)
+2025-08-16 11:29:29,488 - [Solver] FID None, Attempt 1: Success. Solved: G49K
+2025-08-16 11:29:30,571 - [Solver] FID None, Attempt 1: ONNX raw result='UM3A' (confidence: 12.199, 0.001s)
+2025-08-16 11:29:30,571 - [Solver] FID None, Attempt 1: Success. Solved: UM3A
+2025-08-16 11:29:31,657 - [Solver] FID None, Attempt 1: ONNX raw result='ZU9G' (confidence: 16.216, 0.001s)
+2025-08-16 11:29:31,657 - [Solver] FID None, Attempt 1: Success. Solved: ZU9G
+2025-08-16 11:29:32,746 - [Solver] FID None, Attempt 1: ONNX raw result='54ZB' (confidence: 15.411, 0.001s)
+2025-08-16 11:29:32,746 - [Solver] FID None, Attempt 1: Success. Solved: 54ZB
+2025-08-16 11:29:33,809 - [Solver] FID None, Attempt 1: ONNX raw result='2QU4' (confidence: 10.761, 0.001s)
+2025-08-16 11:29:33,809 - [Solver] FID None, Attempt 1: Success. Solved: 2QU4
+2025-08-16 11:29:34,895 - [Solver] FID None, Attempt 1: ONNX raw result='RL4V' (confidence: 14.038, 0.001s)
+2025-08-16 11:29:34,896 - [Solver] FID None, Attempt 1: Success. Solved: RL4V
+2025-08-16 11:29:36,007 - [Solver] FID None, Attempt 1: ONNX raw result='XFCF' (confidence: 22.154, 0.001s)
+2025-08-16 11:29:36,007 - [Solver] FID None, Attempt 1: Success. Solved: XFCF
+2025-08-16 11:29:37,080 - [Solver] FID None, Attempt 1: ONNX raw result='EWGL' (confidence: 19.705, 0.001s)
+2025-08-16 11:29:37,081 - [Solver] FID None, Attempt 1: Success. Solved: EWGL
+2025-08-16 11:29:38,160 - [Solver] FID None, Attempt 1: ONNX raw result='HAM7' (confidence: 14.214, 0.001s)
+2025-08-16 11:29:38,160 - [Solver] FID None, Attempt 1: Success. Solved: HAM7
+2025-08-16 11:29:39,266 - [Solver] FID None, Attempt 1: ONNX raw result='3WMW' (confidence: 12.472, 0.001s)
+2025-08-16 11:29:39,266 - [Solver] FID None, Attempt 1: Success. Solved: 3WMW
+2025-08-16 11:29:40,317 - [Solver] FID None, Attempt 1: ONNX raw result='9Z6J' (confidence: 18.785, 0.001s)
+2025-08-16 11:29:40,317 - [Solver] FID None, Attempt 1: Success. Solved: 9Z6J
+2025-08-16 11:29:41,395 - [Solver] FID None, Attempt 1: ONNX raw result='NZGG' (confidence: 8.412, 0.001s)
+2025-08-16 11:29:41,421 - [Solver] FID None, Attempt 1: Success. Solved: NZGG
+2025-08-16 11:29:42,536 - [Solver] FID None, Attempt 1: ONNX raw result='VQDB' (confidence: 15.341, 0.001s)
+2025-08-16 11:29:42,536 - [Solver] FID None, Attempt 1: Success. Solved: VQDB
+2025-08-16 11:29:43,640 - [Solver] FID None, Attempt 1: ONNX raw result='PIHH' (confidence: 9.884, 0.001s)
+2025-08-16 11:29:43,640 - [Solver] FID None, Attempt 1: Success. Solved: PIHH
+2025-08-16 11:29:44,700 - [Solver] FID None, Attempt 1: ONNX raw result='MJ9S' (confidence: 20.886, 0.001s)
+2025-08-16 11:29:44,701 - [Solver] FID None, Attempt 1: Success. Solved: MJ9S
+2025-08-16 11:29:45,800 - [Solver] FID None, Attempt 1: ONNX raw result='4XBP' (confidence: 25.376, 0.001s)
+2025-08-16 11:29:45,800 - [Solver] FID None, Attempt 1: Success. Solved: 4XBP
+2025-08-16 11:29:46,907 - [Solver] FID None, Attempt 1: ONNX raw result='QBEM' (confidence: 12.157, 0.001s)
+2025-08-16 11:29:46,907 - [Solver] FID None, Attempt 1: Success. Solved: QBEM
+2025-08-16 11:29:47,974 - [Solver] FID None, Attempt 1: ONNX raw result='6YNC' (confidence: 22.264, 0.001s)
+2025-08-16 11:29:47,974 - [Solver] FID None, Attempt 1: Success. Solved: 6YNC
+2025-08-16 11:29:49,047 - [Solver] FID None, Attempt 1: ONNX raw result='NWKK' (confidence: 15.558, 0.001s)
+2025-08-16 11:29:49,047 - [Solver] FID None, Attempt 1: Success. Solved: NWKK
+2025-08-16 11:29:50,196 - [Solver] FID None, Attempt 1: ONNX raw result='N5UF' (confidence: 14.181, 0.001s)
+2025-08-16 11:29:50,196 - [Solver] FID None, Attempt 1: Success. Solved: N5UF
+2025-08-16 11:29:51,306 - [Solver] FID None, Attempt 1: ONNX raw result='MV78' (confidence: 11.395, 0.001s)
+2025-08-16 11:29:51,306 - [Solver] FID None, Attempt 1: Success. Solved: MV78
+2025-08-16 11:29:52,395 - [Solver] FID None, Attempt 1: ONNX raw result='M4FM' (confidence: 16.391, 0.001s)
+2025-08-16 11:29:52,396 - [Solver] FID None, Attempt 1: Success. Solved: M4FM
+2025-08-16 11:29:53,474 - [Solver] FID None, Attempt 1: ONNX raw result='WQWT' (confidence: 14.984, 0.001s)
+2025-08-16 11:29:53,474 - [Solver] FID None, Attempt 1: Success. Solved: WQWT
+2025-08-16 11:30:25,367 - [Solver] FID None, Attempt 1: ONNX raw result='RSC7' (confidence: 19.678, 0.001s)
+2025-08-16 11:30:25,367 - [Solver] FID None, Attempt 1: Success. Solved: RSC7
+2025-08-16 11:30:26,448 - [Solver] FID None, Attempt 1: ONNX raw result='F9J9' (confidence: 13.265, 0.001s)
+2025-08-16 11:30:26,448 - [Solver] FID None, Attempt 1: Success. Solved: F9J9
+2025-08-16 11:30:27,548 - [Solver] FID None, Attempt 1: ONNX raw result='BIQH' (confidence: 13.079, 0.001s)
+2025-08-16 11:30:27,548 - [Solver] FID None, Attempt 1: Success. Solved: BIQH
+2025-08-16 11:30:28,620 - [Solver] FID None, Attempt 1: ONNX raw result='X8KR' (confidence: 13.080, 0.001s)
+2025-08-16 11:30:28,620 - [Solver] FID None, Attempt 1: Success. Solved: X8KR
+2025-08-16 11:30:29,715 - [Solver] FID None, Attempt 1: ONNX raw result='BNY7' (confidence: 8.951, 0.001s)
+2025-08-16 11:30:29,715 - [Solver] FID None, Attempt 1: Success. Solved: BNY7
+2025-08-16 11:30:30,769 - [Solver] FID None, Attempt 1: ONNX raw result='BTM6' (confidence: 13.422, 0.001s)
+2025-08-16 11:30:30,769 - [Solver] FID None, Attempt 1: Success. Solved: BTM6
+2025-08-16 11:30:31,868 - [Solver] FID None, Attempt 1: ONNX raw result='UTXM' (confidence: 11.170, 0.001s)
+2025-08-16 11:30:31,868 - [Solver] FID None, Attempt 1: Success. Solved: UTXM
+2025-08-16 11:30:32,982 - [Solver] FID None, Attempt 1: ONNX raw result='QZSD' (confidence: 21.173, 0.001s)
+2025-08-16 11:30:32,982 - [Solver] FID None, Attempt 1: Success. Solved: QZSD
+2025-08-16 11:30:34,053 - [Solver] FID None, Attempt 1: ONNX raw result='TLWU' (confidence: 15.576, 0.001s)
+2025-08-16 11:30:34,053 - [Solver] FID None, Attempt 1: Success. Solved: TLWU
+2025-08-16 11:30:35,174 - [Solver] FID None, Attempt 1: ONNX raw result='BVPX' (confidence: 22.095, 0.001s)
+2025-08-16 11:30:35,175 - [Solver] FID None, Attempt 1: Success. Solved: BVPX
+2025-08-16 11:30:36,269 - [Solver] FID None, Attempt 1: ONNX raw result='W2XI' (confidence: 14.975, 0.001s)
+2025-08-16 11:30:36,269 - [Solver] FID None, Attempt 1: Success. Solved: W2XI

@@ -16,9 +16,9 @@ export default function CellPopup({ cell, onAdd, onEdit, onDelete }) {
 
       <div id="banner">
         <img id="img-cell" src={cell?.img || "img/banner/icelands.png"} alt="Banner" />
-        <div id="coordinates">
-          <p id="x">x:{cell?.x ?? 0}</p>
-          <p id="y">y:{cell?.y ?? 0}</p>
+        <div id="coordinates" translate="no">
+          <p id="x" translate="no" >x:{cell?.x ?? 0}</p>
+          <p id="y" translate="no" >y:{cell?.y ?? 0}</p>
         </div>
       </div>
 
