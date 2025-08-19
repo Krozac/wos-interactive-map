@@ -19,6 +19,11 @@ _For screenshots and a detailed app presentation, see [docs/presentation.md](doc
 
 ---
 
+## Acknowledgements
+
+The gift code redeem service implementation is adapted from the work in whiteout-project/bot
+While this project doesn’t run through Discord, parts of the code and logic were inspired by their implementation.
+
 ## Getting Started
 
 ### Prerequisites
