@@ -39,4 +39,27 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+
+// Update a guild by ID
+router.put('/:id', async (req, res) => {
+    const { Nom, acronym, color } = req.body;
+
+    try {
+        const guild = await Guild.findByIdAndUpdate(
+            req.params.id,
+            { Nom, acronym, color },
+            { new: true, runValidators: true }
+        );
+
+        if (!guild) {
+            return res.status(404).json({ success: false, message: 'Guild not found' });
+        }
+
+        res.json({ success: true, guild });
+    } catch (err) {
+        console.error('Erreur lors de la mise à jour de la guild :', err);
+        res.status(400).json({ success: false, message: 'Erreur lors de la mise à jour de la guild' });
+    }
+});
+
 export default router;

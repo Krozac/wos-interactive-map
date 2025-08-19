@@ -5,10 +5,10 @@ const router = express.Router();
 
 // Add a building
 router.post('/', async (req, res) => {
-    const { location, size, type, addedBy, extraData } = req.body;
+    const { location, size, type, addedBy,alliance, extraData } = req.body;
 
     try {
-        const building = new Building({ location, size, type, addedBy, extraData: extraData || {} });
+        const building = new Building({ location, size, type, addedBy,alliance, extraData: extraData || {} });
         await building.save();
         res.status(201).json({ success: true, building });
     } catch (err) {
@@ -17,16 +17,21 @@ router.post('/', async (req, res) => {
     }
 });
 
+
 // Get all buildings
 router.get('/', async (req, res) => {
-    try {
-        const buildings = await Building.find();
-        res.json({ success: true, buildings });
-    } catch (err) {
-        console.error('Error fetching buildings:', err);
-        res.status(500).json({ success: false, message: 'Error fetching buildings' });
-    }
+  try {
+    // Populate the alliance/guild field
+    const buildings = await Building.find()
+      .populate('alliance', 'Nom acronym color'); // only include these fields
+
+    res.json({ success: true, buildings });
+  } catch (err) {
+    console.error('Error fetching buildings:', err);
+    res.status(500).json({ success: false, message: 'Error fetching buildings' });
+  }
 });
+
 
 // Delete a building by ID
 router.delete('/:id', async (req, res) => {
@@ -41,12 +46,12 @@ router.delete('/:id', async (req, res) => {
 
 // Update a building by ID
 router.put('/:id', async (req, res) => {
-    const { location, size, type, addedBy, extraData } = req.body;
+    const { location, size, type, addedBy,alliance, extraData } = req.body;
 
     try {
         const updatedBuilding = await Building.findByIdAndUpdate(
             req.params.id,
-            { location, size, type, addedBy, extraData },
+            { location, size, type, addedBy,alliance, extraData },
             { new: true, runValidators: true }
         );
 
