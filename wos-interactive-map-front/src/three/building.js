@@ -38,10 +38,11 @@ function createBuildingMesh(geometry, material) {
 }
 
 async function createTextSprite(building, texture) {
-    const name = building.extraData.name || '';
-    const alliance = building.extraData.alliance || '';
-    const displayName = texture.displayname || '';
-    const fullText = alliance + name + displayName;
+    const name = building?.extraData?.name || '';
+    const alliance = building?.alliance?.acronym || '';
+    const displayName = texture?.displayname || '';
+    const fullText = `${alliance}${name}${displayName}`;
+
 
     const textTexture = await createTextTexture(fullText); // Wait for font + texture
 
@@ -64,11 +65,12 @@ async function createTextSprite(building, texture) {
 
 function createTerritoryMesh(building) {
     // Create the territory area mesh if the building has a territory defined
-    if (!building.extraData.territory) return null;
+    if (!building.extraData?.territory) return null;
 
     const geometryTerritory = new THREE.PlaneGeometry(building.extraData.territory.w, building.extraData.territory.h);
+   // console.log(building.alliance)
     const materialTerritory = new THREE.MeshBasicMaterial({
-        color: new THREE.Color(building.extraData.territory.color),
+        color: new THREE.Color(building.alliance?.color || "#ffffff" ),
         side: THREE.DoubleSide,
         opacity: 0.2,
         transparent: true
@@ -87,11 +89,13 @@ function positionBuildingMesh(mesh, gridX, gridY, widthCells, heightCells) {
 }
 
 // Main Function
-async function showBuildings() {
+async function showBuildings(buildings) {
     // Fetch building data and textures
-    const buildings = await fetchBuildings();
+    //const buildings = await fetchBuildings();
     console.log("Buildings fetched:", buildings);
     const textures = await loadBuildingTextures();
+
+    if (!buildings) { return; }
     clearBuildings();
     //loadFurnaces(buildings);
     initializeGrid();

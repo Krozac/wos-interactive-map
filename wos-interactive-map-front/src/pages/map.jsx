@@ -7,7 +7,8 @@ import MapContainer from '../components/MapContainer'; // your leaflet or three 
 import ToggleButton from '../components/ToggleButton';
 import BuildingForm from '../components/Forms/BuildingForm';
 import { useBuildings } from "../hooks/useBuildings";
-import { showBuildings } from '../three/building';
+import { useGuilds } from '../hooks/useGuilds';
+
 import '../styles/map.css';
 
 export default function MapPage() {
@@ -17,7 +18,12 @@ export default function MapPage() {
   const [selectedBuilding, setSelectedBuilding] = useState(null);
   const [selectedBuildingType, setSelectedBuildingType] = useState(null);
   const [formMode, setFormMode] = React.useState(null); // 'add' or 'edit'
-  const { deleteBuilding } = useBuildings();
+
+  const { buildings, fetchBuildings, addBuilding, updateBuilding, deleteBuilding} = useBuildings();
+
+  const [loading, setLoading] = useState(false);
+
+  //const { deleteBuilding } = useBuildings();
   const handleAdd = () => setFormMode('add');
   const handleEdit = () => {
     if (selectedCell && selectedCell.add1 && selectedCell.add1.building) {
@@ -32,7 +38,7 @@ export default function MapPage() {
             console.log(`Deleting Building with ID: ${selectedCell.add1.building._id}`);
       }
     
-    showBuildings();
+    //showBuildings();
   };
   const handleFormClose = () => {
     setFormMode(null);
@@ -50,7 +56,12 @@ export default function MapPage() {
     <div id="mainContent">
       <Header user={playerData || {}} onEdit={() => {}} />
       <div id="triangle" style={{display: 'none'}}></div>
-      <MapContainer onCellSelect={setSelectedCell} />
+      {loading && (
+        <div className="spinner-overlay">
+          <div className="spinner"></div>
+        </div>
+      )}
+      <MapContainer buildings={buildings} onCellSelect={setSelectedCell} setLoading={setLoading} />
       <div id="Menu">
         <SideMenu selectedKey={activePanel} onSelect={setActivePanel} />
           <InsideMenu
@@ -70,14 +81,16 @@ export default function MapPage() {
         onDelete={handleDelete}
       />
       {formMode && selectedBuildingType && (
-        <BuildingForm
-          mode={formMode}
-          building={selectedBuildingType}
-          cell={selectedCell}
-          onClose={handleFormClose}
-          
-        />
-      )}
+          <BuildingForm
+            mode={formMode}
+            building={selectedBuildingType}
+            cell={selectedCell}
+            onClose={handleFormClose}
+            addBuilding={addBuilding}       // ← pass from parent
+            updateBuilding={updateBuilding} // ← pass from parent
+          />
+        )}
+
 
       <ToggleButton onClick={() => {}} />
     </div>

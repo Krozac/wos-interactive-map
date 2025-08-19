@@ -25,8 +25,8 @@ export function useBuildings(typeFilter = null) {
         const filtered = typeFilter
           ? data.buildings.filter((b) => b.type === typeFilter)
           : data.buildings;
-        setBuildings(filtered);
-        showBuildings(); // update your 3D scene
+        setBuildings(data.buildings);
+        //showBuildings(); // update your 3D scene
       } else {
         console.error('Fetch error:', data.message);
       }
@@ -39,7 +39,7 @@ export function useBuildings(typeFilter = null) {
   const submitBuilding = useCallback(
     async (payload) => {
       // convert local→world
-      const { xLocal, yLocal, size, type, extraData = {}, id } = payload;
+      const { xLocal, yLocal, size, type,alliance, extraData = {}, id } = payload;
       const world = convertLocalToWorld(
         new THREE.Vector3(xLocal, yLocal, 0),
         window.plane
@@ -48,9 +48,12 @@ export function useBuildings(typeFilter = null) {
         location: { x: world.x, y: world.y },
         size,
         type,
+        alliance,
         addedBy: username,
         extraData,
       };
+
+      console.log(body)
 
       const url = id ? `/api/buildings/${id}` : '/api/buildings';
       const method = id ? 'PUT' : 'POST';

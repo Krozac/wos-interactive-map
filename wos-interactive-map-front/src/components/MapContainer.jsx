@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { initScene } from '../three/main.js'; // adjust path as needed
+import { initScene, renderBuildings } from '../three/main.js'; // adjust path as needed
 
 
-export default function MapContainer({ onCellSelect }) {
+export default function MapContainer({buildings, onCellSelect,setLoading }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -14,6 +14,13 @@ export default function MapContainer({ onCellSelect }) {
     };
   }, [onCellSelect]); // include it in deps if it's ever dynamic
 
+  useEffect(()=>{
+    if (buildings) {
+      renderBuildings(buildings,setLoading);
+    }
+  },[buildings])
+
+  
   return (
     <div
       id="three-container"
