@@ -6,6 +6,24 @@
 
 _For screenshots and a detailed app presentation, see [docs/presentation.md](docs/presentation.md)._
 
+## Lite Version
+
+A Lite version of the project is also available for only brower use
+Perfect — here’s the **Lite Version** entry updated with your repo and website link:
+
+---
+
+## Lite Version
+
+A **Lite version** of the project is also available for browser-only use.
+
+* 🔗 [Lite Repository](https://github.com/Krozac/wos-interactive-map-lite)
+* 🌍 [Live Website](https://whiteout-planner.krozac.fr)
+
+---
+
+Do you want me to also add a little comparison list (e.g. "Full version = with backend & Docker | Lite version = static browser app") so readers immediately see the difference?
+
 ---
 
 ## Features
