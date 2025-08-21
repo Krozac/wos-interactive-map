@@ -6,11 +6,6 @@
 
 _For screenshots and a detailed app presentation, see [docs/presentation.md](docs/presentation.md)._
 
-## Lite Version
-
-A Lite version of the project is also available for only brower use
-Perfect — here’s the **Lite Version** entry updated with your repo and website link:
-
 ---
 
 ## Lite Version
