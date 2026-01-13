@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/mapBuildings
+      SOLVER_URL: http://solver:5001
+    depends_on:
+      - mongodb
+      - solver
+
+  solver:
+    build:
+      context: ./wos-gift-code-service
+      dockerfile: Dockerfile.python
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./wos-gift-code-service/models:/app/models
+    environment:
+      PYTHONUNBUFFERED: 1
+
+  mongodb:
+    image: mongo:7
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
