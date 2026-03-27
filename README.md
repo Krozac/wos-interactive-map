@@ -4,10 +4,6 @@
 
 **Whiteout Interactive Map** is a full-stack web application that provides an interactive map experience for users. Built with Node.js, Express, and MongoDB (via Mongoose), it allows users to explore, interact with, and manage map data dynamically. The project is containerized with Docker for easy deployment and scalability.
 
-_For screenshots and a detailed app presentation, see [docs/presentation.md](docs/presentation.md)._
-
----
-
 ## Lite Version
 
 A **Lite version** of the project is also available for browser-only use.
@@ -15,11 +11,6 @@ A **Lite version** of the project is also available for browser-only use.
 * 🔗 [Lite Repository](https://github.com/Krozac/wos-interactive-map-lite)
 * 🌍 [Live Website](https://whiteout-planner.krozac.fr)
 
----
-
-Do you want me to also add a little comparison list (e.g. "Full version = with backend & Docker | Lite version = static browser app") so readers immediately see the difference?
-
----
 
 ## Features
 
@@ -29,8 +20,6 @@ Do you want me to also add a little comparison list (e.g. "Full version = with b
 - **User Authentication:** Secure endpoints and manage user sessions (no password or roles for the moment).
 - **Dockerized Deployment:** Easily run the entire stack with Docker Compose.
 - **Environment Configuration:** Flexible setup via `.env` file.
-
----
 
 ## Acknowledgements
 
@@ -45,8 +34,6 @@ While this project doesn’t run through Discord, parts of the code and logic we
 - [npm](https://www.npmjs.com/)
 - [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/)
 - (Optional) Local or cloud MongoDB instance
-
----
 
 ### Local Development Setup
 
