@@ -86,7 +86,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// 🎮 Validate ID
 async function validateWithWhiteoutAPI(id) {
   const time = Date.now();
   const form = `fid=${id}&time=${time}`;
@@ -95,11 +94,23 @@ async function validateWithWhiteoutAPI(id) {
 
   const response = await fetch(API_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+      'Origin': 'https://wos-giftcode.centurygame.com',
+      'Referer': 'https://wos-giftcode.centurygame.com/',
+      'Accept': 'application/json, text/plain, */*',
+    },
     body,
   });
 
-  return response.json();
+  const text = await response.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    console.error('Non-JSON response from API:', text);
+    throw new Error(text);
+  }
 }
 
 app.post('/validate-id', async (req, res) => {
