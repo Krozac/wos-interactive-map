@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+body{
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#root{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}

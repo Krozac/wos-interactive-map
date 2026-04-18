@@ -1,0 +1,70 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: bold;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.flex-row .input-group {
+  flex: 1;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 90%;
+}
+
+.flex-row .input-group input,
+.flex-row .input-group select {
+  width: 50%;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-actions button {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.form-actions button[type="submit"] {
+  background-color: rgb(0, 123, 255);
+}
+
+.form-actions .closeFormButton {
+    background: none;
+    position: absolute;
+    color: red;
+    right:5px;
+    top:5px;
+    font-size: 13px;
+    border:none;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
+     cursor: pointer; 
+}

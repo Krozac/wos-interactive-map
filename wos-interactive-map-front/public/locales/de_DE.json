@@ -1,0 +1,20 @@
+{
+  "language-name": "Deutsch",
+  "language-flag": "https://www.drapeauxdespays.fr/data/flags/h80/de.png",
+  "menu-login": "Anmelden",
+  "menu-login-prompt": "Bitte melden Sie sich an, um auf die interaktive Karte zuzugreifen.",
+  "menu-login-preview": "Spiel-ID eingeben",
+  "menu-buildings": "Gebäude",
+  "menu-territory": "Gebiet",
+  "menu-members": "Mitglieder",
+  "menu-gift": "Geschenk",
+  "menu-alliance": "Allianz",
+  "furnace-level": "Kessellevel: ",
+  "kid": "Region: ",
+  "buildings": {
+    "banner": "Banner",
+    "furnace": "Kessel",
+    "hq": "Hauptquartier",
+    "trap": "Falle"
+  }
+}

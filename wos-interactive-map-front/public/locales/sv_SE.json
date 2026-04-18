@@ -1,0 +1,20 @@
+{
+  "language-name": "Svenska",
+  "language-flag": "https://www.drapeauxdespays.fr/data/flags/h80/se.png",
+  "menu-login": "Logga in",
+  "menu-login-prompt": "Vänligen logga in för att få tillgång till den interaktiva kartan.",
+  "menu-login-preview": "Ange ditt spel-ID",
+  "menu-buildings": "Byggnader",
+  "menu-territory": "Territorium",
+  "menu-members": "Medlemmar",
+  "menu-gift": "Present",
+  "menu-alliance": "Allians",
+  "furnace-level": "Ugnsnivå: ",
+  "kid": "Region: ",
+  "buildings": {
+    "banner": "Fana",
+    "furnace": "Ugn",
+    "hq": "Högkvarter",
+    "trap": "Fälla"
+  }
+}
