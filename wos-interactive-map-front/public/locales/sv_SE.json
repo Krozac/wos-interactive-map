@@ -1,6 +1,7 @@
 {
   "language-name": "Svenska",
   "language-flag": "https://www.drapeauxdespays.fr/data/flags/h80/se.png",
+  "menu-title": "Interaktiv Karta",
   "menu-login": "Logga in",
   "menu-login-prompt": "Vänligen logga in för att få tillgång till den interaktiva kartan.",
   "menu-login-preview": "Ange ditt spel-ID",
@@ -15,6 +16,10 @@
     "banner": "Fana",
     "furnace": "Ugn",
     "hq": "Högkvarter",
-    "trap": "Fälla"
+    "trap": "Fälla",
+    "farm": "Gård",
+    "coal": "Kolgruva",
+    "iron": "Järnmalmsgruva",
+    "wood": "Träföråd"
   }
 }

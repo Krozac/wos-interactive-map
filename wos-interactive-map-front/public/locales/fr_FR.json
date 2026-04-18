@@ -1,6 +1,7 @@
 {  
   "language-name": "Français",
   "language-flag": "https://www.drapeauxdespays.fr/data/flags/h80/fr.png",
+  "menu-title": "Carte Interactive",
   "menu-login": "Connexion",
   "menu-login-prompt": "Veuillez vous connecter pour accéder à la carte interactive.",
   "menu-login-preview": "Entrer votre identifiant de jeu",

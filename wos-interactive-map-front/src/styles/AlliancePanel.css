@@ -22,27 +22,59 @@
     font-style: normal;
     border-bottom:solid 2px #337ecc;
     box-shadow: 0px 1px 2px black;
+      position: relative;
 }
 
 .alliance:hover {
   background-color: #337ecc;
 }
 
-.alliance-color-box {
+.alliance-banner{
     display: flex; /* Use flexbox */
     justify-content: center; /* Horizontally center the image */
     align-items: center; /* Vertically center the image */
-    margin-left: 10px;
-    border-radius: 5px;
+    margin-left: 20px;
     height: 85px;
-    width: 60px;
-    border-top:solid 2px white;   
-    filter: drop-shadow(0px 0px 4px black);
+    filter: drop-shadow(0px 0px 2px black);
+    position: relative;
+    top : -5px;
+}
+
+.alliance-banner>.alliance-banner-icon {
+    width: 45px;
+    z-index: 2;
+}
+
+.alliance-banner>.alliance-banner-shape {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+
+    background-color: var(--guild-color);
+    
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    z-index: 0;
+}
+
+.alliance-banner>.alliance-banner-shape-shadow{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+
+    opacity: 0.5;
+    z-index: 1;
 }
 
 .alliance-info {
       flex:right;
-    margin-left:10px;
+    margin-left:20px;
 }
 
 .alliance-name {
@@ -54,4 +86,10 @@
 .alliance-acronym {
   font-size: 0.9rem;
   opacity: 0.8;
+}
+
+.alliance-actions {
+    position: absolute;
+    right : 0;
+    bottom: 10px;
 }

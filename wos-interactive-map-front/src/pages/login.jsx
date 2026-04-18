@@ -51,12 +51,15 @@ export default function Login() {
   return (
     <>
       <LanguageSelector />
-      <img
-        src="img/home_logo.83ba690.png"
-        alt="Logo"
-        className="home_logo"
-        draggable={false}
-      />
+      <div className ="home_container">
+        <img
+          src="img/home_logo.83ba690.png"
+          alt="Logo"
+          className="home_logo"
+          draggable={false}
+        />
+        <h1 className="home_title">{t('menu-title')}</h1>
+      </div>
       <div id="overlay">
         <div id="modal">
           <h2>{t('menu-login')}</h2>

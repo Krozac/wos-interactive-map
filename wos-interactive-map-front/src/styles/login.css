@@ -10,14 +10,6 @@ body {
     margin: 0;
   }
   
-  .home_logo {
-    position: absolute;
-    left: 50%;
-    top: 20px; /* Optional: add some top spacing */
-    transform: translateX(-50%);
-    user-select: none;
-  }
-  
   #overlay {
     position: absolute;
     width: 300px;
@@ -92,3 +84,29 @@ body {
     font-size: 0.9rem;
   }
   
+  .home_container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    display: flex;              
+    flex-direction: column;  
+    justify-content: center;
+  }
+
+  .home_logo {
+    width: 50vw;
+    max-width: 550px;
+  }
+
+  .home_title {
+    color:white;
+    width: 100%;       
+    font-size: min(2.5vw, 2.5rem);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .home_title::first-letter {
+    font-size: min(3vw, 3.5rem);
+  }

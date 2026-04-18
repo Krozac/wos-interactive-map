@@ -1,6 +1,7 @@
 {
   "language-name": "English",
   "language-flag": "https://www.drapeauxdespays.fr/data/flags/h80/gb.png",
+  "menu-title": "Interactive Map",
   "menu-login": "Login",
   "menu-login-prompt": "Please log in to access the interactive map.",
   "menu-login-preview": "Enter your game ID",

@@ -1,6 +1,7 @@
 {
   "language-name": "Deutsch",
   "language-flag": "https://www.drapeauxdespays.fr/data/flags/h80/de.png",
+  "menu-title": "Interaktive Karte",
   "menu-login": "Anmelden",
   "menu-login-prompt": "Bitte melden Sie sich an, um auf die interaktive Karte zuzugreifen.",
   "menu-login-preview": "Spiel-ID eingeben",
@@ -15,6 +16,10 @@
     "banner": "Banner",
     "furnace": "Kessel",
     "hq": "Hauptquartier",
-    "trap": "Falle"
+    "trap": "Falle",
+    "farm": "Bauernhof",
+    "coal": "Kohlemine",
+    "iron": "Eisenmine",
+    "wood": "Holzlager"
   }
 }

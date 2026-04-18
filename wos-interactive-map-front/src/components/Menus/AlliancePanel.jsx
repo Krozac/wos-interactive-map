@@ -34,6 +34,7 @@ export default function AlliancePanel() {
 
   return (
     <div id="AlliancePanel">
+      {/* this doesnt look like a button TODO: make it look like a button */}
       <button onClick={handleAdd} className="add-guild-btn">Add Guild</button>
 
       {formMode && (
@@ -46,11 +47,16 @@ export default function AlliancePanel() {
 
       {guilds.map(({ _id, Nom, acronym, color }) => (
         <div key={_id} className="alliance">
-          <div
-            className="alliance-color-box"
-            style={{ background: `radial-gradient(110% 15% at bottom, transparent 50%, ${color} 51%)` }}
-            title={Nom}>
-            <img src="/img/flake.png" alt="Alliance Icon" />
+          <div className="alliance-banner">
+            <img
+              className="alliance-banner-shape-shadow"
+              src="/img/banner/shapes/banner-1.png"
+            />
+            <div
+              className="alliance-banner-shape"
+              style={{ "--guild-color": color , WebkitMaskImage: "url('/img/banner/shapes/banner-1.png')", maskImage: "url('/img/banner/shapes/banner-1.png')", }}
+            />
+            <img className="alliance-banner-icon" src="/img/banner/icons/icon-deer.png" alt="Alliance Icon" />
           </div>
 
           <div className="alliance-info">
@@ -59,8 +65,8 @@ export default function AlliancePanel() {
           </div>
 
           <div className="alliance-actions">
-            <button onClick={() => handleEdit({ _id, Nom, acronym, color })}>Edit</button>
-            <button onClick={() => handleDelete(_id)}>Delete</button>
+            <button onClick={() => handleEdit({ _id, Nom, acronym, color })}><i class="fas fa-edit"></i></button>
+            <button onClick={() => handleDelete(_id)}><i class="fas fa-trash-alt"></i></button>
           </div>
         </div>
       ))}

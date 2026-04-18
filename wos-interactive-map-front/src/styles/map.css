@@ -25,6 +25,7 @@
     margin:inherit;
     
 }
+
 .roleInfo>p{
     margin:0;
 }
@@ -229,6 +230,7 @@ canvas{
 
 
 #toggleButton {
+    display: none; /* Masqué pour L'instant TODO: réimplementer */
     position: absolute;
     background:transparent;
     background: none; /* Pas de fond */
@@ -603,4 +605,11 @@ button{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+@media screen and (max-width: 600px) {
+    .roleInfo {
+        font-size: 14px;
+    }
 }
