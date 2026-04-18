@@ -11,7 +11,6 @@ i18n
   .use(HttpBackend)
   .use(initReactI18next)
   .init({
-<<<<<<< HEAD
     lng: savedLng || 'en_GB',  // <-- initialize with cookie value or fallback
     fallbackLng: 'en_GB',
 
@@ -28,17 +27,6 @@ i18n
     },
 
     debug: true
-=======
-    lng: savedLng || 'en_US',  // <-- initialize with cookie value or fallback
-    fallbackLng: 'en_US',
-    debug: true,
-    interpolation: {
-      escapeValue: false,
-    },
-    backend: {
-      loadPath: '/locales/{{lng}}.json', // Usually from public folder
-    },
->>>>>>> origin/main
   });
 
 export default i18n;
