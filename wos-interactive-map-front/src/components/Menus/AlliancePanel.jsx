@@ -5,9 +5,23 @@ import '../../styles/AlliancePanel.css';
 
 export default function AlliancePanel() {
   const { guilds, fetchGuilds, addGuild, updateGuild, deleteGuild } = useGuilds();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [formMode, setFormMode] = useState(null); // 'add' or 'edit'
   const [selectedGuild, setSelectedGuild] = useState(null);
 
+  useEffect(() => {
+    const loadGuilds = async () => {
+      try {
+        await fetchGuilds();
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadGuilds();
+  }, [fetchGuilds]);
 
   const handleAdd = () => {
     setSelectedGuild(null);

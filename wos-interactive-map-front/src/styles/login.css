@@ -10,6 +10,17 @@ body {
     margin: 0;
   }
   
+<<<<<<< HEAD
+=======
+  .home_logo {
+    position: absolute;
+    left: 50%;
+    top: 20px; /* Optional: add some top spacing */
+    transform: translateX(-50%);
+    user-select: none;
+  }
+  
+>>>>>>> origin/main
   #overlay {
     position: absolute;
     width: 300px;
@@ -83,6 +94,7 @@ body {
     font-weight: 700;
     font-size: 0.9rem;
   }
+<<<<<<< HEAD
   
   .home_container {
     position: absolute;
@@ -110,3 +122,6 @@ body {
   .home_title::first-letter {
     font-size: min(3vw, 3.5rem);
   }
+=======
+  
+>>>>>>> origin/main

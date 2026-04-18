@@ -10,17 +10,27 @@
   position: relative;
   font-size: 30px;
   z-index:100;
+<<<<<<< HEAD
   width: 30px;
   height: 30px;
+=======
+>>>>>>> origin/main
 }
 
 #languageButton>img{
     position: absolute;
     right:30px;
+<<<<<<< HEAD
     bottom:5px;
     height:10px;
     width:16px;
     z-index:100;
+=======
+    bottom:20px;
+    height:10px;
+    width:16px;
+      z-index:100;
+>>>>>>> origin/main
 }
 
 .lang-trigger {
@@ -76,6 +86,7 @@
   border-radius: 4px;
   box-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
+<<<<<<< HEAD
 
 @media screen and (max-width: 600px) {
   #languageButton {
@@ -91,3 +102,5 @@
     grid-area: 1 / 2 / 2 / 3;
   }
 }
+=======
+>>>>>>> origin/main

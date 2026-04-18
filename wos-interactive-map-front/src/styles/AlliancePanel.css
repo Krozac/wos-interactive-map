@@ -22,13 +22,17 @@
     font-style: normal;
     border-bottom:solid 2px #337ecc;
     box-shadow: 0px 1px 2px black;
+<<<<<<< HEAD
       position: relative;
+=======
+>>>>>>> origin/main
 }
 
 .alliance:hover {
   background-color: #337ecc;
 }
 
+<<<<<<< HEAD
 .alliance-banner{
     display: flex; /* Use flexbox */
     justify-content: center; /* Horizontally center the image */
@@ -70,11 +74,27 @@
 
     opacity: 0.5;
     z-index: 1;
+=======
+.alliance-color-box {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    margin-left: 10px;
+    border-radius: 5px;
+    height: 85px;
+    width: 60px;
+    border-top:solid 2px white;   
+    filter: drop-shadow(0px 0px 4px black);
+>>>>>>> origin/main
 }
 
 .alliance-info {
       flex:right;
+<<<<<<< HEAD
     margin-left:20px;
+=======
+    margin-left:10px;
+>>>>>>> origin/main
 }
 
 .alliance-name {
@@ -87,9 +107,12 @@
   font-size: 0.9rem;
   opacity: 0.8;
 }
+<<<<<<< HEAD
 
 .alliance-actions {
     position: absolute;
     right : 0;
     bottom: 10px;
 }
+=======
+>>>>>>> origin/main
