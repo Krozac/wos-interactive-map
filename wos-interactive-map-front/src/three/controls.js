@@ -2,6 +2,15 @@ import * as THREE from 'three';
 import { loadTextures } from './textures.js';
 import { convertWorldToLocal, showCell, hideCell, convertLocalToWorld } from './helpers.js';
 
+
+//other ruins locations
+
+let ruinsLocations = [
+    {x: 552, y: 552 ,w :96 ,h : 96}, //center ruins
+    {x: 570, y: 773 ,w :59 ,h : 59}, //x and y are the bottom left corner of the ruins, w and h are the width and height in cells
+    {x: 579, y: 930 ,w :59 ,h : 59},
+]
+
 function initControls(controls,setSelectedCell){
     controls.enableDamping = true; // Active les mouvements fluides
     controls.enableZoom = false;
@@ -146,36 +155,15 @@ function initControls(controls,setSelectedCell){
                 0
             );
         }
-
-        else if (LocalX > 552 && LocalX < 648 && LocalY > 552 && LocalY < 648) {
-            setSelectedCell(prev => ({
-                ...prev,
-                status: "Ruins",
-                img: "/img/banner/tundra.png", // TODO : scrap ruins texture
-                displayName: "biome.ruins"
-            }))
-        }
-        else if (LocalX > 450 && LocalX < 750 && LocalY > 450 && LocalY < 750) {
-            setSelectedCell(prev => ({
-                ...prev,
-                status: "Terre Fertile",
-                img: "/img/banner/tundra.png",  // TODO : scrap fertile land texture
-                displayName: "biome.fertileland"
-            }))
-        } else if (LocalX > 300 && LocalX < 900 && LocalY > 300 && LocalY < 900) {
-            setSelectedCell(prev => ({
-                ...prev,
-                status: "Toundra",
-                img: "/img/banner/tundra.png", 
-                displayName: "biome.tundra"
-            }))
-        } else {
-            setSelectedCell(prev => ({
-                ...prev,
-                status: "Banquise",
-                img: "/img/banner/icelands.png",
-                displayName: "biome.icelands"
-            }))
+        else {
+            let biome = getBiome(LocalX, LocalY);
+            setSelectedCell({
+                x: LocalX,
+                y: LocalY,
+                displayName: biome.displayName,
+                status: biome.status, // or whatever status you detect
+                img: biome.img, // or default fallback
+            });
         }
         
         window.selectedcellcontent = window.grid[LocalX][LocalY];
@@ -256,6 +244,47 @@ function initControls(controls,setSelectedCell){
     }
    
 }
+}
+
+function getBiome(LocalX, LocalY) {
+
+    // 1. check ruins (custom shapes first)
+    for (const r of ruinsLocations) {
+        if (
+            LocalX >= r.x &&
+            LocalX < r.x + r.w &&
+            LocalY >= r.y &&
+            LocalY < r.y + r.h
+        ) {
+            return {
+                status: "Ruins",
+                img: "/img/banner/tundra.png", // TODO: scrap a specific ruins image
+                displayName: "biome.ruins"
+            };
+        }
+    }
+
+    if (LocalX > 450 && LocalX < 750 && LocalY > 450 && LocalY < 750) {
+        return {
+            status: "Terre Fertile",
+            img: "/img/banner/tundra.png", // TODO: scrap a specific fertile land image
+            displayName: "biome.fertileland"
+        };
+    }
+
+    if (LocalX > 300 && LocalX < 900 && LocalY > 300 && LocalY < 900) {
+        return {
+            status: "Toundra",
+            img: "/img/banner/tundra.png",
+            displayName: "biome.tundra"
+        };
+    }
+
+    return {
+        status: "Banquise",
+        img: "/img/banner/icelands.png",
+        displayName: "biome.icelands"
+    };
 }
 
 
