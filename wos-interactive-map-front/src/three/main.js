@@ -1,4 +1,4 @@
-import { showBuildings, clearBuildings } from './building.js';
+import { clearBuildings , addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh,clearTerritories,didBuildingChange, rebuildGrid } from './building.js';
 import { cameraControls, setupCamera } from './camera.js';
 
 import { EulerRotation} from './constants.js';
@@ -67,18 +67,45 @@ export async function renderObstacles(setLoading) {
   if (setLoading) setLoading(false);
 }
 
-let renderVersion = 0;
-export async function renderBuildings(buildings, setLoading) {
-  if (!window.scene) return;
 
-  const version = ++renderVersion;
-  window.renderVersion = version;
 
-  if (setLoading) setLoading(true);
+export async function syncBuildings(buildings) {
+  const existing = window.buildingMeshMap;
+  const newIds = new Set(buildings.map(b => b._id));
+  const promises = [];
 
-  await showBuildings(buildings, version); 
+  for (const id of existing.keys()) {
+    if (!newIds.has(id)) {
+      promises.push(deleteBuilding(id));
+    }
+  }
 
-  if (version !== renderVersion) return;
+  for (const building of buildings) {
+    if (existing.has(building._id)) {
+      if (didBuildingChange(existing.get(building._id).userData.building, building)) {
+        promises.push(updateBuilding(building));
+      }
+    } else {
+      promises.push(addBuilding(building));
+    }
+  }
 
-  if (setLoading) setLoading(false); 
+  await Promise.all(promises);
+
+  window.grid = rebuildGrid(buildings);
+
+  rebuildTerritories(buildings);
+}
+
+let territoryVersion = 0;
+function rebuildTerritories(buildings) {
+  const version = ++territoryVersion;
+
+  // defer to next frame to avoid blocking + ensure scene stability
+  requestAnimationFrame(() => {
+    if (version !== territoryVersion) return;
+
+    clearTerritories();
+    createTerritoryMesh(buildings);
+  });
 }

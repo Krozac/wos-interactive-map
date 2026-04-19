@@ -10,13 +10,18 @@ import { convertWorldToLocal, checkIfCellsAreFree, occupyCells,addCellQuad, conv
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 const allianceGeometries = new Map();
-let grid = [];
+window.grid = [];
+initializeGrid();
 let isRendering = false;
+
+window.buildingMeshMap = new Map();
+
+
 function initializeGrid() {
     // Create a 2D array of gridSize x gridSize and fill it with null
-    grid = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
+    window.grid = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
 }
-// Helper Functions
+
 async function loadBuildingTextures() {
     // Load all textures in parallel and handle texture mapping for building types
     const textures = await loadTextures();
@@ -71,14 +76,7 @@ function convertCellToWorld(x, y) {
     const local = new THREE.Vector3(x, y, 0);
     return convertLocalToWorld(local, window.plane);
 }
-function isBorder(x, y, alliance) {
-    return (
-        grid[x + 1]?.[y] !== alliance ||
-        grid[x - 1]?.[y] !== alliance ||
-        grid[x][y + 1] !== alliance ||
-        grid[x][y - 1] !== alliance
-    );
-}
+
 
 function createTerritoryMesh(buildings) {
 
@@ -130,10 +128,28 @@ function createTerritoryMesh(buildings) {
 
         const mesh = new THREE.Mesh(geometry, material);
         mesh.renderOrder = 997;
-        mesh.identifiant = "building";
+        mesh.identifiant = "territory";
 
         window.scene.add(mesh);
     }
+}
+
+function clearTerritories() {
+    for (let i = window.scene.children.length - 1; i >= 0; i--) {
+    const child = window.scene.children[i];
+    if (child.identifiant && child.identifiant === 'territory') {
+      window.scene.remove(child);
+      // Also dispose geometries/materials if needed to free memory:
+      if (child.geometry) child.geometry.dispose();
+      if (child.material) {
+        if (Array.isArray(child.material)) {
+          child.material.forEach(m => m.dispose());
+        } else {
+          child.material.dispose();
+        }
+      }
+    }
+  }
 }
 
 function positionBuildingMesh(mesh, gridX, gridY, widthCells, heightCells) {
@@ -150,92 +166,54 @@ function validateVersion(version) {
     return true;
 }
 
-// Main Function
-async function showBuildings(buildings,version) {
-
-    console.log("version at start of showBuildings:", version);
-    if (!validateVersion(version)) return; // run after each await to ensure we are still on the correct version
-
-    // Fetch building data and textures
-    //const buildings = await fetchBuildings();
-    console.log("Buildings fetched:", buildings);
+async function addBuilding(building) {
     const textures = await loadBuildingTextures();
-    if (!validateVersion(version)) return;
 
-    if (!buildings) { return; }
-    clearBuildings();
-    //loadFurnaces(buildings);
-    initializeGrid();
-    allianceGeometries.clear();
+    const texture = textures[building.type]?.texture;
 
-
-
-    // Process each building
-    for (const building of buildings) {
-
-        const buildingType = building.type;
-        const texture = textures[buildingType]?.texture;
-
-        if (!texture) {
-            //console.error(`No texture found for building type: ${buildingType}`);
-            continue; // Skip if no texture is found
-        }
-
-        // Prepare the texture for rotation
-        texture.center.set(0.5, 0.5);
-        texture.rotation = -Math.PI / 4;
-
-        // Create building geometry and material
-        const geometry = new THREE.PlaneGeometry(building.size.w, building.size.h);
-        const material = createBuildingMaterial(texture);
-
-        // Create building mesh
-        const mesh = createBuildingMesh(geometry, material);
-        mesh.identifiant = "building";
-
-        // Get grid position and local coordinates
-        const gridX = Math.floor(building.location.x);
-        const gridY = Math.floor(building.location.y);
-        const localCoords = convertWorldToLocal(new THREE.Vector3(gridX, gridY, 0), window.plane);
-        
-        const cellX = localCoords.x;
-        const cellY = localCoords.y;
-
-        // Check if building fits in grid and if cells are free
-        const widthCells = Math.ceil(building.size.w);
-        const heightCells = Math.ceil(building.size.h);
-
-        if (!checkIfCellsAreFree(gridX, gridY, widthCells, heightCells, grid)) {
-            //console.warn(`Building at (${gridX}, ${gridY}) with size (${widthCells}, ${heightCells}) overlaps with another building.`);
-            continue; // Skip if building doesn't fit
-        }
-
-        const territory = building.extraData?.territory;
-        const hasTerritory = !!territory;
-
-        const territoryW = hasTerritory ? territory.w : 0;
-        const territoryH = hasTerritory ? territory.h : 0;
-
-        // Mark cells as occupied and store building data
-        building.displayName =  textures[buildingType].displayname;
-        occupyCells(cellX, cellY, widthCells, heightCells, building.alliance?._id || 'neutral',building, textures[buildingType]?.path, grid,territoryW,territoryH);
-
-        // Position the building mesh and add it to the scene
-        positionBuildingMesh(mesh, gridX, gridY, widthCells, heightCells);
-        window.scene.add(mesh);
-
-        // Create and add text sprite to building
-        const sprite = await createTextSprite(building, textures[buildingType]);
-        if (!validateVersion(version)) return; // Check version again before adding sprite
-
-        mesh.add(sprite);
-
+    if (!texture) {
+        return;
     }
-        createTerritoryMesh(buildings);
-        window.grid = grid;
 
+    texture.center.set(0.5, 0.5);
+    texture.rotation = -Math.PI / 4;
+
+    const geometry = new THREE.PlaneGeometry(building.size.w, building.size.h);
+    const material = createBuildingMaterial(texture);
+
+    const mesh = createBuildingMesh(geometry, material);
+
+    mesh.identifiant = "building";
+    mesh.userData.building = building;
+    mesh.userData.buildingId = building._id;
+
+    positionBuildingMesh(mesh, building.location.x, building.location.y, building.size.w, building.size.h);
+
+    window.scene.add(mesh);
+    window.buildingMeshMap.set(building._id, mesh);
+
+    const sprite = await createTextSprite(building, textures[building.type]);
+    mesh.add(sprite);
+
+    building.displayName =  textures[building.type].displayname;
 }
 
+async function deleteBuilding(buildingId) {
+    const mesh = window.buildingMeshMap.get(buildingId);
+    if (!mesh) return;
+
+    window.scene.remove(mesh);
+    if (mesh.geometry) mesh.geometry.dispose();
+    if (mesh.material) mesh.material.dispose();
+
+    window.buildingMeshMap.delete(buildingId);
+}
+
+async function updateBuilding(building) {
+    // easier and faster than editing the existing mesh, especially for text which is a texture that needs to be recreated
+    await deleteBuilding(building._id);
+    await addBuilding(building);
+}
 
 function clearBuildings() {
   // Iterate backwards to safely remove elements
@@ -256,8 +234,61 @@ function clearBuildings() {
   }
 }
 
+function rebuildGrid(buildings) {
+  const newGrid = Array(gridSize)
+    .fill()
+    .map(() => Array(gridSize).fill(null));
 
-        let buildingsVisible = true; 
+  for (const building of buildings) {
+    const gridX = Math.floor(building.location.x);
+    const gridY = Math.floor(building.location.y);
+
+    const localCoords = convertWorldToLocal(
+      new THREE.Vector3(gridX, gridY, 0),
+      window.plane
+    );
+
+    const cellX = localCoords.x;
+    const cellY = localCoords.y;
+
+    const widthCells = Math.ceil(building.size.w);
+    const heightCells = Math.ceil(building.size.h);
+
+    const territory = building.extraData?.territory;
+
+    occupyCells(
+      cellX,
+      cellY,
+      widthCells,
+      heightCells,
+      building.alliance?._id || 'neutral',
+      building,
+      null,
+      newGrid,
+      territory?.w || 0,
+      territory?.h || 0
+    );
+  }
+
+  return newGrid;
+}
+
+
+function didBuildingChange(oldB, newB) {
+    if (!oldB || !newB) return true;
+    return (
+        oldB.location.x !== newB.location.x ||
+        oldB.location.y !== newB.location.y ||
+        oldB.size.w !== newB.size.w ||
+        oldB.size.h !== newB.size.h ||
+        oldB.type !== newB.type ||
+        oldB.alliance?._id !== newB.alliance?._id ||
+        JSON.stringify(oldB.extraData) !== JSON.stringify(newB.extraData)
+    );
+}
+
+
+let buildingsVisible = true; 
 
 function toggleBuildings() {
     const eyeIcon = document.getElementById('eyeIcon');
@@ -286,4 +317,4 @@ function toggleBuildings() {
 }
         
 window.toggleBuildings=toggleBuildings;
-export { showBuildings, clearBuildings, toggleBuildings };
+export { clearBuildings, toggleBuildings , addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh, clearTerritories,didBuildingChange, rebuildGrid};

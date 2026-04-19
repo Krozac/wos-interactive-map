@@ -13,7 +13,7 @@ function checkIfCellsAreFree(x, y, width, height, grid) {
     return true; // Return true if all the cells are free
 }
 
-function occupyCells(x, y, width, height, owner,building, path, grid, territoryW = width,territoryH = height) {
+function occupyCells(x, y, width, height, owner, building, path, grid, territoryW = width,territoryH = height) {
     for (let i = 0; i < width; i++) {
         for (let j = 0; j < height; j++) {
             grid[x + i][y + j] = {

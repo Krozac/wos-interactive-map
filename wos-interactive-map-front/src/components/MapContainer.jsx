@@ -1,5 +1,5 @@
 import React, { use, useEffect, useRef } from 'react';
-import { initScene, renderBuildings, renderObstacles } from '../three/main.js'; // adjust path as needed
+import { initScene, renderObstacles, syncBuildings } from '../three/main.js'; // adjust path as needed
 
 
 export default function MapContainer({buildings, onCellSelect,setLoading }) {
@@ -17,7 +17,7 @@ export default function MapContainer({buildings, onCellSelect,setLoading }) {
   useEffect(()=>{
     if (buildings) {
       if (!buildings || buildings.length === 0) return;
-      renderBuildings(buildings,setLoading);
+      syncBuildings(buildings, setLoading);
     }
   },[buildings])
 
