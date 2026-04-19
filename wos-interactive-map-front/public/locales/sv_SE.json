@@ -13,13 +13,26 @@
   "furnace-level": "Ugnsnivå: ",
   "kid": "Region: ",
   "buildings": {
-    "banner": "Fana",
+    "alliance": {
+      "banner": "Baner",
+      "hq": "Huvudkontor",
+      "trap": "Fälla",
+      "farm": "Gård",
+      "coal": "Kolkällare",
+      "iron": "Järnmalm",
+      "wood": "Träförvaring"
+    },
     "furnace": "Ugn",
-    "hq": "Högkvarter",
-    "trap": "Fälla",
-    "farm": "Gård",
-    "coal": "Kolgruva",
-    "iron": "Järnmalmsgruva",
-    "wood": "Träföråd"
+    "sunfire": "Soleld"
+  },
+  "obstacles": {
+    "mountain": {
+      "big": "Stor Berg",
+      "small": "Liten Berg"
+    },
+    "lake": {
+      "big": "Stor Sjö",
+      "small": "Liten Sjö"
+    }
   }
 }

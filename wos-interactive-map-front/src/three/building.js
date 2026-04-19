@@ -3,7 +3,7 @@ import { loadTextures } from './textures.js';
 import { gridSize } from './constants.js';
 import { fetchBuildings } from '../crud/buildings.js';
 import * as THREE from 'three';
-
+import i18n from '../i18n/index.js';
 import { createTextTexture } from './textures.js'
 import { convertWorldToLocal, checkIfCellsAreFree, occupyCells,addCellQuad, convertLocalToWorld} from './helpers.js';
 
@@ -45,7 +45,7 @@ async function createTextSprite(building, texture) {
     const name = building?.extraData?.name || '';
     const alliance = building?.alliance?.acronym || '';
     const displayName = texture?.displayname || '';
-    const fullText = `${alliance}${name}${displayName}`;
+    const fullText = `[${alliance}] ${name}${displayName != "buildings.furnace" ? i18n.t(displayName) : ""}`;
 
 
     const textTexture = await createTextTexture(fullText); // Wait for font + texture
@@ -217,6 +217,7 @@ async function showBuildings(buildings,version) {
         const territoryH = hasTerritory ? territory.h : 0;
 
         // Mark cells as occupied and store building data
+        building.displayName =  textures[buildingType].displayname;
         occupyCells(cellX, cellY, widthCells, heightCells, building.alliance?._id || 'neutral',building, textures[buildingType]?.path, grid,territoryW,territoryH);
 
         // Position the building mesh and add it to the scene

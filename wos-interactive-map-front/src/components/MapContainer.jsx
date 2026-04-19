@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { initScene, renderBuildings } from '../three/main.js'; // adjust path as needed
+import React, { use, useEffect, useRef } from 'react';
+import { initScene, renderBuildings, renderObstacles } from '../three/main.js'; // adjust path as needed
 
 
 export default function MapContainer({buildings, onCellSelect,setLoading }) {
@@ -21,6 +21,9 @@ export default function MapContainer({buildings, onCellSelect,setLoading }) {
     }
   },[buildings])
 
+  useEffect(()=>{
+    renderObstacles(setLoading);
+  },[])
   
   return (
     <div

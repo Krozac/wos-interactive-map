@@ -7,6 +7,7 @@ import { initControls } from './controls.js'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
+import { showObstacles } from './obstacles.js';
 
 export let scene, camera, renderer, controls;
 
@@ -50,6 +51,20 @@ export async function initScene(container, setSelectedCell) {
   }
 
   animate();
+}
+
+let obstaclesRenderVersion = 0;
+export async function renderObstacles(setLoading) {
+  if (!window.scene) return;
+
+  const version = ++obstaclesRenderVersion;
+  window.obstaclesRenderVersion = version;
+
+  if (setLoading) setLoading(true);
+
+  await showObstacles(version);
+
+  if (setLoading) setLoading(false);
 }
 
 let renderVersion = 0;

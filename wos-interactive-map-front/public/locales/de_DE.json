@@ -13,13 +13,26 @@
   "furnace-level": "Kessellevel: ",
   "kid": "Region: ",
   "buildings": {
-    "banner": "Banner",
-    "furnace": "Kessel",
-    "hq": "Hauptquartier",
-    "trap": "Falle",
-    "farm": "Bauernhof",
-    "coal": "Kohlemine",
-    "iron": "Eisenmine",
-    "wood": "Holzlager"
+    "alliance": {
+      "banner": "Banner",
+      "hq": "Hauptquartier",
+      "trap": "Falle",
+      "farm": "Bauernhof",
+      "coal": "Kohlemine",
+      "iron": "Eisenmine",
+      "wood": "Holzlager"
+    },
+    "furnace": "Ofen",
+    "sunfire": "Sonnenfeuer"
+  },
+  "obstacles": {
+    "mountain": {
+      "big": "Großer Berg",
+      "small": "Kleiner Berg"
+    },
+    "lake": {
+      "big": "Großer See",
+      "small": "Kleiner See"
+    }
   }
 }

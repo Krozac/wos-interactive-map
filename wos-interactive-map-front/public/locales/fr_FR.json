@@ -13,13 +13,26 @@
   "furnace-level": "Niveau de Chaudière : ",
   "kid": "Région : ",
   "buildings": {
-    "banner": "Bannière",
+    "alliance": {
+      "banner": "Bannière",
+      "hq": "Quartier Général",
+      "trap": "Piège",
+      "farm": "Ferme",
+      "coal": "Mine de Charbon",
+      "iron": "Mine de Fer",
+      "wood": "Scierie"
+    },
     "furnace": "Chaudière",
-    "hq": "QG",
-    "trap": "Piège",
-    "farm": "Ferme",
-    "coal": "Mine de Charbon", 
-    "iron": "Mine de Fer",
-    "wood": "Parc à Bois"
+    "sunfire": "Feu Solaire"
+  },
+  "obstacles": {
+    "mountain": {
+      "big": "Grande Montagne",
+      "small": "Petite Montagne"
+    },
+    "lake": {
+      "big": "Grand Lac",
+      "small": "Petit Lac"
+    }
   }
 }

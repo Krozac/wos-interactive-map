@@ -68,7 +68,9 @@
     width: 80px;
     height: 80px;
 
-    opacity: 0.5;
+    mix-blend-mode: multiply;
+
+    opacity: 0.8;
     z-index: 1;
 }
 
