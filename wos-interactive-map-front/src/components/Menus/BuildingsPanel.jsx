@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { fitText } from "../../utils/fitText";
 import BuildingItem from "../BuildingItem";
-const buildings = [
+export const buildings = [
   {
     id: "Banner",
     value: "Banner",
@@ -10,7 +10,7 @@ const buildings = [
     height: 1,
     width: 1,
     imgSrc: "img/alliance/banner.png",
-    labelKey: "buildings.banner",
+    labelKey: "buildings.alliance.banner",
   },
   {
     id: "Furnace",
@@ -28,7 +28,7 @@ const buildings = [
     height: 3,
     width: 3,
     imgSrc: "img/alliance/hq.png",
-    labelKey: "buildings.hq",
+    labelKey: "buildings.alliance.hq",
   },
   {
     id: "Trap",
@@ -37,7 +37,7 @@ const buildings = [
     height: 3,
     width: 3,
     imgSrc: "img/alliance/trap.png",
-    labelKey: "buildings.trap",
+    labelKey: "buildings.alliance.trap",
   },
     {
     id: "Iron",
@@ -46,7 +46,7 @@ const buildings = [
     height: 2,
     width: 2,
     imgSrc: "img/alliance/iron.png",
-    labelKey: "buildings.iron",
+    labelKey: "buildings.alliance.iron",
   },
     {
     id: "Coal",
@@ -55,7 +55,7 @@ const buildings = [
     height: 2,
     width: 2,
     imgSrc: "img/alliance/coal.png",
-    labelKey: "buildings.coal",
+    labelKey: "buildings.alliance.coal",
   },
     {
     id: "Farm",
@@ -64,7 +64,7 @@ const buildings = [
     height: 2,
     width: 2,
     imgSrc: "img/alliance/farm.png",
-    labelKey: "buildings.farm",
+    labelKey: "buildings.alliance.farm",
   },
     {
     id: "Wood",
@@ -73,7 +73,7 @@ const buildings = [
     height: 2,
     width: 2,
     imgSrc: "img/alliance/wood.png",
-    labelKey: "buildings.wood",
+    labelKey: "buildings.alliance.wood",
   },
 ];
 

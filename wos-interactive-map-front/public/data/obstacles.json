@@ -1,0 +1,38 @@
+{
+	"0":{
+		"type":"mountain_big",
+		"displayName": "obstacles.mountain.big",
+		"w": 8,
+		"h": 8,
+		"scale": 1.125,
+		"x":1181,
+		"y":1173
+	},
+	"1":{
+		"type":"mountain_big",
+		"displayName": "obstacles.mountain.big",
+		"w": 8,
+		"h": 8,
+		"scale": 1.125,
+		"x":1155,
+		"y":1168
+	},
+	"2":{
+		"type":"mountain_big",
+		"displayName": "obstacles.mountain.big",
+		"w": 8,
+		"h": 8,
+		"scale": 1.125,
+		"x":1141,
+		"y":1121
+	},
+	"3":{
+		"type":"mountain_big",
+		"displayName": "obstacles.mountain.big",
+		"w": 8,
+		"h": 8,
+		"scale": 1.125,
+		"x":1114,
+		"y":1166
+	}
+}

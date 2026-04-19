@@ -13,13 +13,26 @@
   "furnace-level": "Stove Level: ",
   "kid": "Region: ",
   "buildings": {
-    "banner": "Banner",
+    "alliance": {
+      "banner": "Banner",
+      "hq": "Headquarters",
+      "trap": "Trap",
+      "farm": "Farm",
+      "coal": "Coal Mine",
+      "iron": "Iron Mine",
+      "wood": "Wood Yard"
+    },
     "furnace": "Furnace",
-    "hq": "Headquarters",
-    "trap": "Trap",
-    "farm": "Farm",
-    "coal": "Coal Mine",
-    "iron": "Iron Mine",
-    "wood": "Wood Yard"
+    "sunfire": "Sunfire"
+  },
+  "obstacles": {
+    "mountain": {
+      "big": "Big Mountain",
+      "small": "Small Mountain"
+    },
+    "lake": {
+      "big": "Big Lake",
+      "small": "Small Lake"
+    }
   }
 }

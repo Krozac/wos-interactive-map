@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { loadTextures } from './textures.js';
-import { convertWorldToLocal, showCell, hideCell } from './helpers.js';
+import { convertWorldToLocal, showCell, hideCell, convertLocalToWorld } from './helpers.js';
 
 function initControls(controls,setSelectedCell){
     controls.enableDamping = true; // Active les mouvements fluides
@@ -63,21 +63,23 @@ function initControls(controls,setSelectedCell){
         window.planeSelected.scale.x = 1;
         window.planeSelected.scale.y = 1;
         window.planeSelected.position.set(cellX, cellY, 0);
+        window.planeSelected.material.color.set(0x89CFF0);
 
+        let cell = null;
         if (window.grid[LocalX][LocalY] && window.grid[LocalX][LocalY].building) {
-            let cell = window.grid[LocalX][LocalY]
+            cell = window.grid[LocalX][LocalY]
 
-        console.log(cell)
-        setSelectedCell({
-            x: cell.positionx,
-            y: cell.positiony,
-            status: cell.building.type, // or whatever status you detect
-            img: cell.path, // or default fallback
-            add1: cell,
-            add2: "", // fill in if needed
-        });
+            setSelectedCell({
+                x: cell.positionx,
+                y: cell.positiony,
+                displayName: cell.building.displayName,
+                status: cell.building.type, // or whatever status you detect
+                img: cell.path, // or default fallback
+                add1: cell,
+                add2: "", // fill in if needed
+            });
 
-            /*
+                /*
             document.getElementById("status").innerHTML = cell.building.type;
             document.getElementById("x").innerHTML = "x: " + cell.positionx;""
             document.getElementById("y").innerHTML = "y: " + cell.positiony;
@@ -94,6 +96,7 @@ function initControls(controls,setSelectedCell){
             const anchorCornerX = scaleOffsetX; // Anchor on bottom-left
             const anchorCornerY = scaleOffsetY;
 
+
             window.planeSelected.position.set(
                 cell.building.location.x  + anchorCornerX,
                 cell.building.location.y + anchorCornerY,
@@ -103,6 +106,47 @@ function initControls(controls,setSelectedCell){
             
 
         }
+        else if (window.obstacleGrid[LocalX][LocalY] && window.obstacleGrid[LocalX][LocalY].building) {
+            cell = window.obstacleGrid[LocalX][LocalY]
+
+            setSelectedCell({
+                x: cell.positionx,
+                y: cell.positiony,
+                displayName: cell.building.displayName,
+                status: cell.building.displayName, // or whatever status you detect
+                img: cell.path, // or default fallback
+                add1: cell,
+                add2: "", // fill in if needed
+            });
+            window.selectedbuilding = window.obstacleGrid[LocalX][LocalY];
+            
+            window.planeSelected.scale.x = cell.building.w;
+            window.planeSelected.scale.y = cell.building.h;
+
+            window.planeSelected.material.color.set(0xff6b6b);
+
+            const scaleOffsetX = cell.building.w / 2; // Half the width
+            const scaleOffsetY = cell.building.h / 2;
+            console.log ("cell :", cell)
+
+            const anchorCornerX = scaleOffsetX; // Anchor on bottom-left
+            const anchorCornerY = scaleOffsetY;
+
+            const localCoords = convertLocalToWorld(
+                new THREE.Vector3(cell.positionx,cell.positiony , 0),
+                window.plane
+            );
+
+            const worldX = localCoords.x;
+            const worldY = localCoords.y;
+
+            window.planeSelected.position.set(
+                worldX  + anchorCornerX,
+                worldY + anchorCornerY,
+                0
+            );
+        }
+
         else if (LocalX > 552 && LocalX < 648 && LocalY > 552 && LocalY < 648) {
             document.getElementById("status").innerHTML = "Ruins";
         }
@@ -159,11 +203,11 @@ function initControls(controls,setSelectedCell){
 
         arrow.style.left = (screenX-5)+'px';
         arrow.style.top = screenY+'px';
-
-        console.log(building);
         if (!window.grid[LocalX][LocalY] && building?.value != undefined){
             
-            window.scene.remove(window.ghostbuildingmesh)
+            
+            clearGhostBuildingMesh();
+            
             const textures = await loadTextures();
             const texture = textures[building.value].texture;
             texture.center.set(0.5, 0.5); // Center the rotation point
@@ -180,17 +224,31 @@ function initControls(controls,setSelectedCell){
             let newghostbuildingmesh = new THREE.Mesh(geometry, material);
             newghostbuildingmesh.position.set(cellX + (building.width/2) -0.5, cellY + (building.height/2) -0.5, 0); // Adjust the position based on the size
             newghostbuildingmesh.rotation.set(Math.PI/16,-Math.PI/16,0)  
-            window.ghostbuildingmesh =  newghostbuildingmesh;
+            newghostbuildingmesh.identifiant = "ghost";
+            window.ghostbuildingmesh = newghostbuildingmesh;
             // Add the building mesh to the scene
             window.scene.add(window.ghostbuildingmesh);
 
         }
         else{
-            window.scene.remove( window.ghostbuildingmesh)
+            clearGhostBuildingMesh();
         }
     }
    
 }
+}
+
+
+function clearGhostBuildingMesh() {
+    for (let i = window.scene.children.length - 1; i >= 0; i--) {
+        const child = window.scene.children[i];
+
+        if (child.identifiant === "ghost") {
+            window.scene.remove(child);
+            child.geometry?.dispose();
+            child.material?.dispose();
+        }
+    }
 }
 
 export { initControls }

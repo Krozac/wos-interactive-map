@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { convertLocalToWorld, convertWorldToLocal } from '../three/helpers.js'
-import { showBuildings } from '../three/building.js'
+
 import { centerCameraOn } from '../three/camera.js'
 import { getCookie } from '../utils/cookies.js'
 export async function addBuildingFurnace() {
@@ -146,7 +146,7 @@ async function addBuilding(x, y, type, w, h, extraData = {}) {
         alert('Erreur réseau lors de l\'ajout du bâtiment.');
         return false;
     } finally {
-        await showBuildings();
+
     }
 }
 
@@ -191,7 +191,7 @@ export async function deleteBuilding(id) {
         console.error('Network error:', error);
         return; // Arrêter l'exécution en cas d'erreur réseau
     }
-    await showBuildings(); // Attendre la réponse avant d'afficher les bâtiments
+  
 }
 
 export async function updateBuilding(id, x, y, type, w, h, extraData = {}) {
@@ -225,8 +225,6 @@ export async function updateBuilding(id, x, y, type, w, h, extraData = {}) {
         alert('Erreur réseau lors de la mise à jour du bâtiment.');
     }
 
-    // Refresh the building list
-    await showBuildings();
 }
 
 export async function updateBuildingFurnace() {

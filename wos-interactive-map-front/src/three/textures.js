@@ -1,18 +1,21 @@
 import * as THREE from 'three';
 
 const textureLoader = new THREE.TextureLoader();
+import {fitCanvasText} from '../utils/fitText.js';
 
 async function loadTextures() {
     const texturePromises = {
-        Banner: loadTexture('/img/alliance/banner.png', "Bannière d'Alliance"),
-        HQ: loadTexture('/img/alliance/hq.png', "QG d'Alliance"),
-        Furnace: loadTexture('/img/furnace.png', ""),
-        Trap: loadTexture('/img/alliance/trap.png', "Piège à Ours"),
-        SunFire: loadTexture('/img/sunfire.png', "Chateau Solaire"),
-        Iron: loadTexture('/img/alliance/iron.png', "Mine de Fer d'Alliance"),
-        Coal: loadTexture('/img/alliance/coal.png', "Mine de Charbon d'Alliance"),
-        Farm: loadTexture('/img/alliance/farm.png', "Ferme d'Alliance"),
-        Wood: loadTexture('/img/alliance/wood.png', "Parc à Bois d'Alliance"),
+        Banner: loadTexture('/img/alliance/banner.png', "buildings.alliance.banner"),
+        HQ: loadTexture('/img/alliance/hq.png', "buildings.alliance.hq"),
+        Furnace: loadTexture('/img/furnace.png', "buildings.furnace"),
+        Trap: loadTexture('/img/alliance/trap.png', "buildings.alliance.trap"),
+        SunFire: loadTexture('/img/sunfire.png', "buildings.sunfire"),
+        Iron: loadTexture('/img/alliance/iron.png', "buildings.alliance.iron"),
+        Coal: loadTexture('/img/alliance/coal.png', "buildings.alliance.coal"),
+        Farm: loadTexture('/img/alliance/farm.png', "buildings.alliance.farm"),
+        Wood: loadTexture('/img/alliance/wood.png', "buildings.alliance.wood"),
+        // obstacles:
+        Mountain_Big: loadTexture('/img/obstacles/mountain-big-8x8-gray.png', "obstacle.mountain.big"),
     };
 
     const loadedTextures = await Promise.all(Object.values(texturePromises));
@@ -42,28 +45,31 @@ function loadTexture(path, displayname) {
 }
 
 async function createTextTexture(text) {
-    // Ensure the font is loaded before using it
-    await document.fonts.load('80px Rowdies');
+    await document.fonts.load('80px "Rowdies"');
 
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
 
     canvas.width = 1024;
     canvas.height = 512;
-    
-    context.fillStyle = 'rgba(255, 255, 255, 0)';
-    context.fillRect(0, 0, canvas.width, canvas.height);
 
-    context.font = '80px Rowdies';
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    const maxWidth = canvas.width - 20;
+
+    const fontSize = fitCanvasText(context, text, maxWidth, 80);
+
+    context.font = `${fontSize}px Rowdies`;
     context.fillStyle = 'white';
     context.textAlign = 'center';
-    context.textBaseline = 'middle'; // better vertical alignment
+    context.textBaseline = 'middle';
+
     context.fillText(text, canvas.width / 2, canvas.height / 2);
 
     const texture = new THREE.Texture(canvas);
     texture.needsUpdate = true;
+
     return texture;
 }
-
 
 export { loadTextures, createTextTexture };

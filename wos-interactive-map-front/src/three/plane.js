@@ -28,9 +28,6 @@ function initPlane(){
     planeSelected.renderOrder=999;
     window.scene.add(planeSelected);
     
-    let ghostbuildingmesh
-    
-    window.ghostbuildingmesh = ghostbuildingmesh;
     
     window.gridHelper = gridHelper;
     window.plane= plane;

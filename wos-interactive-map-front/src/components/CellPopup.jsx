@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
 
 export default function CellPopup({ cell, onAdd, onEdit, onDelete }) {
   console.log("CellPopup rendered with cell:", cell);
+    const { t } = useTranslation();
   return (
     <div id="Cell" className="cell-popup" style={{ display: cell ? 'block' : 'none' }}>
       <div id="addBuildingBtn" onClick={() => onAdd?.('add')} className="icon-button">
@@ -22,7 +24,7 @@ export default function CellPopup({ cell, onAdd, onEdit, onDelete }) {
         </div>
       </div>
 
-      <p id="status">{cell?.status || "Inconnu"}</p>
+      <p id="status">{cell?.displayName ? t(cell?.displayName) : ""}</p>
       <p id="add1">{cell?.add1?.building?.extraData?.name || ""}</p>
       <p id="add2">{cell?.add2 || ""}</p>
     </div>

@@ -3,7 +3,6 @@ import { useState, useEffect, useCallback } from 'react';
 import * as THREE from 'three';
 import { convertLocalToWorld } from '../three/helpers.js';
 import { getCookie } from '../utils/cookies.js';
-import { showBuildings } from '../three/building.js';
 
 export function useBuildings(typeFilter = null) {
   const [buildings, setBuildings] = useState([]);
