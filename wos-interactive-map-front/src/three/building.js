@@ -234,7 +234,7 @@ function clearBuildings() {
   }
 }
 
-function rebuildGrid(buildings) {
+async function rebuildGrid(buildings) {
   const newGrid = Array(gridSize)
     .fill()
     .map(() => Array(gridSize).fill(null));
@@ -256,17 +256,22 @@ function rebuildGrid(buildings) {
 
     const territory = building.extraData?.territory;
 
+    const textures = await loadBuildingTextures();
+    const texture = textures[building.type];
+    console.log( texture)
     occupyCells(
-      cellX,
-      cellY,
-      widthCells,
-      heightCells,
-      building.alliance?._id || 'neutral',
-      building,
-      null,
-      newGrid,
-      territory?.w || 0,
-      territory?.h || 0
+        cellX,
+        cellY,
+        widthCells,
+        heightCells,
+        building.alliance?._id || 'neutral',
+        building,
+        texture?.path || '',
+        // texture path needed here 
+        newGrid,
+        territory?.w || 0,
+        territory?.h || 0,
+        texture?.displayname
     );
   }
 
