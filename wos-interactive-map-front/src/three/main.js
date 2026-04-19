@@ -68,11 +68,11 @@ export async function renderObstacles(setLoading) {
 }
 
 
-
-export async function syncBuildings(buildings) {
+export async function syncBuildings(buildings, setLoading) {
   const existing = window.buildingMeshMap;
   const newIds = new Set(buildings.map(b => b._id));
   const promises = [];
+  setLoading(true);
 
   for (const id of existing.keys()) {
     if (!newIds.has(id)) {
@@ -95,6 +95,7 @@ export async function syncBuildings(buildings) {
   window.grid = rebuildGrid(buildings);
 
   rebuildTerritories(buildings);
+  setLoading(false);
 }
 
 let territoryVersion = 0;
