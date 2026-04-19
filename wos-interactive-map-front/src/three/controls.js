@@ -68,11 +68,11 @@ function initControls(controls,setSelectedCell){
         let cell = null;
         if (window.grid[LocalX][LocalY] && window.grid[LocalX][LocalY].building) {
             cell = window.grid[LocalX][LocalY]
-
+            console.log("cell building :", cell)
             setSelectedCell({
                 x: cell.positionx,
                 y: cell.positiony,
-                displayName: cell.building.displayName,
+                displayName: cell.displayName,
                 status: cell.building.type, // or whatever status you detect
                 img: cell.path, // or default fallback
                 add1: cell,

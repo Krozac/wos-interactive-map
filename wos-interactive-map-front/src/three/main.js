@@ -92,7 +92,7 @@ export async function syncBuildings(buildings, setLoading) {
 
   await Promise.all(promises);
 
-  window.grid = rebuildGrid(buildings);
+  window.grid = await rebuildGrid(buildings);
 
   rebuildTerritories(buildings);
   setLoading(false);
