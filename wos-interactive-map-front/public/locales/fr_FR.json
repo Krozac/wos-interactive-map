@@ -34,5 +34,11 @@
       "big": "Grand Lac",
       "small": "Petit Lac"
     }
+  },
+  "biome": {
+    "ruins": "Ruines",
+    "fertileland": "Terre Fertile",
+    "tundra": "Toundra",
+    "icelands": "Banquise"
   }
 }

@@ -34,5 +34,11 @@
       "big": "Big Lake",
       "small": "Small Lake"
     }
+  },
+  "biome": {
+    "ruins": "Ruins",
+    "fertileland": "Fertile Land",
+    "tundra": "Tundra",
+    "icelands": "Icelands"
   }
 }

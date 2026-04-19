@@ -148,16 +148,34 @@ function initControls(controls,setSelectedCell){
         }
 
         else if (LocalX > 552 && LocalX < 648 && LocalY > 552 && LocalY < 648) {
-            document.getElementById("status").innerHTML = "Ruins";
+            setSelectedCell(prev => ({
+                ...prev,
+                status: "Ruins",
+                img: "/img/banner/tundra.png", // TODO : scrap ruins texture
+                displayName: "biome.ruins"
+            }))
         }
         else if (LocalX > 450 && LocalX < 750 && LocalY > 450 && LocalY < 750) {
-            document.getElementById("status").innerHTML = "Terre Fertile";
+            setSelectedCell(prev => ({
+                ...prev,
+                status: "Terre Fertile",
+                img: "/img/banner/tundra.png",  // TODO : scrap fertile land texture
+                displayName: "biome.fertileland"
+            }))
         } else if (LocalX > 300 && LocalX < 900 && LocalY > 300 && LocalY < 900) {
-            document.getElementById("status").innerHTML = "Toundra";
-            document.getElementById("img-cell").src = "/img/banner/tundra.png";
+            setSelectedCell(prev => ({
+                ...prev,
+                status: "Toundra",
+                img: "/img/banner/tundra.png", 
+                displayName: "biome.tundra"
+            }))
         } else {
-            document.getElementById("status").innerHTML = "Banquise";
-            document.getElementById("img-cell").src = "/img/banner/icelands.png";
+            setSelectedCell(prev => ({
+                ...prev,
+                status: "Banquise",
+                img: "/img/banner/icelands.png",
+                displayName: "biome.icelands"
+            }))
         }
         
         window.selectedcellcontent = window.grid[LocalX][LocalY];
