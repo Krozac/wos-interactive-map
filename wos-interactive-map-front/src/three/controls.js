@@ -203,12 +203,14 @@ function initControls(controls,setSelectedCell){
 
         arrow.style.left = (screenX-5)+'px';
         arrow.style.top = screenY+'px';
-        if (!window.grid[LocalX][LocalY] && building?.value != undefined){
+        console.log("buildingTypeSelected :", building)
+        if (!window.grid[LocalX][LocalY]?.building && building?.value != undefined){
             
             
             clearGhostBuildingMesh();
             
             const textures = await loadTextures();
+            console.log("building value :", building.value)
             const texture = textures[building.value].texture;
             texture.center.set(0.5, 0.5); // Center the rotation point
             texture.rotation = -Math.PI / 4;
