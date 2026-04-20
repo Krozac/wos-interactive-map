@@ -32,7 +32,7 @@ export default function LanguageMenu() {
     return (
       <div className="lang-menu">
         <button id="languageButton" onClick={() => setOpen(!open)}>
-          <i class="fas fa-globe-europe"></i>
+          <i className="fas fa-globe-europe"></i>
           {current && (
             <img id="selected-flag" src={current.flag} alt={current.name} />
           )}

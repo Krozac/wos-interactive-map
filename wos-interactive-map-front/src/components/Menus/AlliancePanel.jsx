@@ -79,8 +79,8 @@ export default function AlliancePanel() {
           </div>
 
           <div className="alliance-actions">
-            <button onClick={() => handleEdit({ _id, Nom, acronym, color })}><i class="fas fa-edit"></i></button>
-            <button onClick={() => handleDelete(_id)}><i class="fas fa-trash-alt"></i></button>
+            <button onClick={() => handleEdit({ _id, Nom, acronym, color })}><i className="fas fa-edit"></i></button>
+            <button onClick={() => handleDelete(_id)}><i className="fas fa-trash-alt"></i></button>
           </div>
         </div>
       ))}

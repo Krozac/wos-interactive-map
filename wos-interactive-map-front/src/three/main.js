@@ -1,5 +1,7 @@
-import { clearBuildings , addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh,clearTerritories,didBuildingChange, rebuildGrid } from './building.js';
+import { addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh,clearTerritories,didBuildingChange, rebuildGrid } from './building.js';
 import { cameraControls, setupCamera } from './camera.js';
+import { gridSize } from './constants.js';
+import { createEmptyGrid } from './helpers.js'
 
 import { EulerRotation} from './constants.js';
 import { initPlane } from './plane.js';
@@ -7,15 +9,27 @@ import { initControls } from './controls.js'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import { showObstacles } from './obstacles.js';
+import { plotObstacles } from './obstacles/obstacles.js';
 
 export let scene, camera, renderer, controls;
+
+
+const world = {
+  grids: {
+    buildings: [],
+    obstacles: [],
+    resources: []
+  }
+};
+
+
 
 export async function initScene(container, setSelectedCell) {
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x335799);
 
   window.scene = scene;
+  window.world = world;
 
   camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.001, 10000000);
 
@@ -53,16 +67,12 @@ export async function initScene(container, setSelectedCell) {
   animate();
 }
 
-let obstaclesRenderVersion = 0;
+
+
 export async function renderObstacles(setLoading) {
-  if (!window.scene) return;
-
-  const version = ++obstaclesRenderVersion;
-  window.obstaclesRenderVersion = version;
-
   if (setLoading) setLoading(true);
 
-  await showObstacles(version);
+  await plotObstacles();
 
   if (setLoading) setLoading(false);
 }

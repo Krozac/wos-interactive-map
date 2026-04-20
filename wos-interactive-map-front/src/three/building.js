@@ -72,7 +72,7 @@ async function createTextSprite(building, texture) {
         textTextureCache.set(fullText, textTexture);
         sprite.material.map = textTexture;
     }
-    
+
     return sprite;
 }
 
@@ -160,14 +160,6 @@ function positionBuildingMesh(mesh, gridX, gridY, widthCells, heightCells) {
     // Set the building mesh position based on its grid coordinates and size
     mesh.position.set(gridX + widthCells / 2, gridY + heightCells / 2, 0);
     mesh.rotation.set(Math.PI / 16, -Math.PI / 16, 0);
-}
-
-function validateVersion(version) {
-    if (version !== window.renderVersion) {
-        console.log("Aborting operation due to version mismatch:", version, window.renderVersion);
-        return false;
-    }
-    return true;
 }
 
 async function addBuilding(building) {
@@ -355,4 +347,4 @@ initializeGrid();
 window.toggleBuildings=toggleBuildings;
 i18n.on('languageChanged', updateAllBuildingTexts);
 
-export { clearBuildings, toggleBuildings , addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh, clearTerritories,didBuildingChange, rebuildGrid};
+export { toggleBuildings , addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh, clearTerritories,didBuildingChange, rebuildGrid};

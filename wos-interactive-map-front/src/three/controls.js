@@ -148,8 +148,8 @@ function initControls(controls,setSelectedCell){
             
 
         }
-        else if (window.obstacleGrid[LocalX][LocalY] && window.obstacleGrid[LocalX][LocalY].building) {
-            cell = window.obstacleGrid[LocalX][LocalY]
+        else if (window.world.grids.obstacles [LocalX][LocalY] && window.world.grids.obstacles [LocalX][LocalY].building) {
+            cell = window.world.grids.obstacles [LocalX][LocalY]
 
             setSelectedCell({
                 x: cell.positionx,
@@ -160,7 +160,7 @@ function initControls(controls,setSelectedCell){
                 add1: cell,
                 add2: "", // fill in if needed
             });
-            window.selectedbuilding = window.obstacleGrid[LocalX][LocalY];
+            window.selectedbuilding = window.world.grids.obstacles [LocalX][LocalY];
             
             window.planeSelected.scale.x = cell.building.w;
             window.planeSelected.scale.y = cell.building.h;
