@@ -10,19 +10,18 @@ import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUti
 
 const allianceGeometries = new Map();
 window.grid = [];
-initializeGrid();
-let isRendering = false;
-
+window.buildingTextSprites = new Map();
 window.buildingMeshMap = new Map();
+const textTextureCache = new Map();
+
+let buildingsVisible = true; 
 
 
 function initializeGrid() {
-    // Create a 2D array of gridSize x gridSize and fill it with null
     window.grid = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
 }
 
 async function loadBuildingTextures() {
-    // Load all textures in parallel and handle texture mapping for building types
     const textures = await loadTextures();
     return textures;
 }
@@ -51,14 +50,9 @@ async function createTextSprite(building, texture) {
     const displayName = texture?.displayname || '';
     const fullText = `[${alliance}] ${name}${displayName != "buildings.furnace" ? i18n.t(displayName) : ""}`;
 
-
-    const textTexture = await createTextTexture(fullText); // Wait for font + texture
-
     const spriteMaterial = new THREE.SpriteMaterial({
-        map: textTexture,
         transparent: true,
     });
-
     const sprite = new THREE.Sprite(spriteMaterial);
     sprite.renderOrder = 999;
     sprite.material.depthTest = false;
@@ -68,6 +62,17 @@ async function createTextSprite(building, texture) {
         -building.size.h / 2 + 0.5,
         0
     );
+
+
+    if (textTextureCache.has(fullText)) {
+        sprite.material.map = textTextureCache.get(fullText);
+    }
+    else {
+        const textTexture = await createTextTexture(fullText);
+        textTextureCache.set(fullText, textTexture);
+        sprite.material.map = textTexture;
+    }
+    
     return sprite;
 }
 
@@ -194,6 +199,8 @@ async function addBuilding(building) {
     const sprite = await createTextSprite(building, textures[building.type]);
     mesh.add(sprite);
 
+    window.buildingTextSprites.set(building._id, {sprite, building});
+
     building.displayName =  textures[building.type].displayname;
 }
 
@@ -212,6 +219,33 @@ async function updateBuilding(building) {
     // easier and faster than editing the existing mesh, especially for text which is a texture that needs to be recreated
     await deleteBuilding(building._id);
     await addBuilding(building);
+}
+
+async function updateAllBuildingTexts() {
+    const textures = await loadBuildingTextures();
+
+    for (const [id, entry] of window.buildingTextSprites.entries()) {
+        const { sprite, building } = entry;
+
+        const textureData = textures[building.type];
+
+        const name = building?.extraData?.name || '';
+        const alliance = building?.alliance?.acronym || '';
+        const displayName = textureData?.displayname || '';
+
+        const fullText = `[${alliance}] ${name}${
+            displayName !== "buildings.furnace"
+                ? i18n.t(displayName)
+                : ""
+        }`;
+
+        const newTexture = await createTextTexture(fullText);
+
+        sprite.material.map.dispose();
+
+        sprite.material.map = newTexture;
+        sprite.material.needsUpdate = true;
+    }
 }
 
 function clearBuildings() {
@@ -290,9 +324,6 @@ function didBuildingChange(oldB, newB) {
     );
 }
 
-
-let buildingsVisible = true; 
-
 function toggleBuildings() {
     const eyeIcon = document.getElementById('eyeIcon');
 
@@ -319,5 +350,9 @@ function toggleBuildings() {
     buildingsVisible = !buildingsVisible; // Inverser l'état
 }
         
+
+initializeGrid();
 window.toggleBuildings=toggleBuildings;
+i18n.on('languageChanged', updateAllBuildingTexts);
+
 export { clearBuildings, toggleBuildings , addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh, clearTerritories,didBuildingChange, rebuildGrid};
