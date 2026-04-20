@@ -9,7 +9,7 @@ import { initControls } from './controls.js'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import { plotObstacles } from './obstacles/obstacles.js';
+import { plotObstacles } from './obstacles/obstaclesController.js';
 
 export let scene, camera, renderer, controls;
 
