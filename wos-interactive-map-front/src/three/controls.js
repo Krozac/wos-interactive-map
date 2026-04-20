@@ -7,8 +7,42 @@ import { convertWorldToLocal, showCell, hideCell, convertLocalToWorld } from './
 
 let ruinsLocations = [
     {x: 552, y: 552 ,w :96 ,h : 96}, //center ruins
+
+    //top left inner 
     {x: 570, y: 773 ,w :59 ,h : 59}, //x and y are the bottom left corner of the ruins, w and h are the width and height in cells
+
+    //top right inner
+    {x: 773, y: 570 ,w :59 ,h : 59},
+
+    // bottom left inner
+    {x: 373, y: 570 ,w :59 ,h : 59},
+
+    // bottom right inner
+    {x: 570, y: 373 ,w :59 ,h : 59},
+
+    // top left 
+    {x: 819, y: 930 ,w :59 ,h : 59},
     {x: 579, y: 930 ,w :59 ,h : 59},
+    {x: 330, y: 930 ,w :59 ,h : 59},
+
+    // top right
+    {x:930, y: 801 ,w :59 ,h : 59},
+    {x:930, y: 579 ,w :59 ,h : 59},
+    {x:930, y: 321 ,w :59 ,h : 59},
+
+    // bottom left
+    {x: 210, y: 801 ,w :59 ,h : 59},
+    {x: 210, y: 579 ,w :59 ,h : 59},
+    {x: 210, y: 321 ,w :59 ,h : 59},
+
+    // bottom right
+    {x: 339, y: 210 ,w :59 ,h : 59},
+    {x: 561, y: 210 ,w :59 ,h : 59},
+    {x: 819, y: 210 ,w :59 ,h : 59},
+]   
+
+let scorchedEarthLocations = [
+    //TODO later add all scorched earth locations (a lot -> each little complexes on the map)
 ]
 
 function initControls(controls,setSelectedCell){
@@ -77,7 +111,6 @@ function initControls(controls,setSelectedCell){
         let cell = null;
         if (window.grid[LocalX][LocalY] && window.grid[LocalX][LocalY].building) {
             cell = window.grid[LocalX][LocalY]
-            console.log("cell building :", cell)
             setSelectedCell({
                 x: cell.positionx,
                 y: cell.positiony,
@@ -136,7 +169,6 @@ function initControls(controls,setSelectedCell){
 
             const scaleOffsetX = cell.building.w / 2; // Half the width
             const scaleOffsetY = cell.building.h / 2;
-            console.log ("cell :", cell)
 
             const anchorCornerX = scaleOffsetX; // Anchor on bottom-left
             const anchorCornerY = scaleOffsetY;
@@ -209,14 +241,12 @@ function initControls(controls,setSelectedCell){
 
         arrow.style.left = (screenX-5)+'px';
         arrow.style.top = screenY+'px';
-        console.log("buildingTypeSelected :", building)
         if (!window.grid[LocalX][LocalY]?.building && building?.value != undefined){
             
             
             clearGhostBuildingMesh();
             
             const textures = await loadTextures();
-            console.log("building value :", building.value)
             const texture = textures[building.value].texture;
             texture.center.set(0.5, 0.5); // Center the rotation point
             texture.rotation = -Math.PI / 4;

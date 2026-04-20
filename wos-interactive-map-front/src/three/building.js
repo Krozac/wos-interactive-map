@@ -1,7 +1,6 @@
-import { loadFurnaces } from '../crud/buildings.js';
+
 import { loadTextures } from './textures.js';
 import { gridSize } from './constants.js';
-import { fetchBuildings } from '../crud/buildings.js';
 import * as THREE from 'three';
 import i18n from '../i18n/index.js';
 import { createTextTexture } from './textures.js'
@@ -258,7 +257,6 @@ async function rebuildGrid(buildings) {
 
     const textures = await loadBuildingTextures();
     const texture = textures[building.type];
-    console.log( texture)
     occupyCells(
         cellX,
         cellY,
