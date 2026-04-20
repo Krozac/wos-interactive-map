@@ -15,7 +15,6 @@ async function getObstaclesData(){
 }
 
 function isPlotingObstacles(version){
-    console.log(version , "   ", window.obstaclesPlotVersion)
     return window.obstaclesPlotVersion !== version;
 }
 
@@ -29,9 +28,6 @@ export async function plotObstacles(){
     const obstaclesData = await getObstaclesData()
     if (isPlotingObstacles(version)) return; 
     
-    
-    console.log(obstaclesData)
-
     await renderObstacles(obstaclesData)
     if (isPlotingObstacles(version)) return; 
 

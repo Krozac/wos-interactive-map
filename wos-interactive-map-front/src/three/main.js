@@ -1,7 +1,6 @@
-import { addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh,clearTerritories,didBuildingChange, rebuildGrid } from './building.js';
 import { cameraControls, setupCamera } from './camera.js';
-import { gridSize } from './constants.js';
-import { createEmptyGrid } from './helpers.js'
+
+import { syncBuildings } from './buildings/buildingsController.js';
 
 import { EulerRotation} from './constants.js';
 import { initPlane } from './plane.js';
@@ -67,8 +66,6 @@ export async function initScene(container, setSelectedCell) {
   animate();
 }
 
-
-
 export async function renderObstacles(setLoading) {
   if (setLoading) setLoading(true);
 
@@ -78,45 +75,10 @@ export async function renderObstacles(setLoading) {
 }
 
 
-export async function syncBuildings(buildings, setLoading) {
-  const existing = window.buildingMeshMap;
-  const newIds = new Set(buildings.map(b => b._id));
-  const promises = [];
+export async function renderBuildings(buildings, setLoading) {
   setLoading(true);
 
-  for (const id of existing.keys()) {
-    if (!newIds.has(id)) {
-      promises.push(deleteBuilding(id));
-    }
-  }
+  await syncBuildings(buildings)
 
-  for (const building of buildings) {
-    if (existing.has(building._id)) {
-      if (didBuildingChange(existing.get(building._id).userData.building, building)) {
-        promises.push(updateBuilding(building));
-      }
-    } else {
-      promises.push(addBuilding(building));
-    }
-  }
-
-  await Promise.all(promises);
-
-  window.grid = await rebuildGrid(buildings);
-
-  rebuildTerritories(buildings);
   setLoading(false);
-}
-
-let territoryVersion = 0;
-function rebuildTerritories(buildings) {
-  const version = ++territoryVersion;
-
-  // defer to next frame to avoid blocking + ensure scene stability
-  requestAnimationFrame(() => {
-    if (version !== territoryVersion) return;
-
-    clearTerritories();
-    createTerritoryMesh(buildings);
-  });
 }

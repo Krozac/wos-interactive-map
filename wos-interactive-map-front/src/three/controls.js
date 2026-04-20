@@ -97,7 +97,7 @@ function initControls(controls,setSelectedCell){
             y: LocalY,
             status: "Toundra", // or whatever status you detect
             img: "/img/banner/tundra.png", // or default fallback
-            add1: window.grid[LocalX][LocalY] ? window.grid[LocalX][LocalY]: "",
+            add1: window.world.grids.buildings[LocalX][LocalY] ? window.world.grids.buildings[LocalX][LocalY]: "",
             add2: "", // fill in if needed
         });
 
@@ -109,8 +109,8 @@ function initControls(controls,setSelectedCell){
         window.planeSelected.material.color.set(0x89CFF0);
 
         let cell = null;
-        if (window.grid[LocalX][LocalY] && window.grid[LocalX][LocalY].building) {
-            cell = window.grid[LocalX][LocalY]
+        if (window.world.grids.buildings[LocalX][LocalY] && window.world.grids.buildings[LocalX][LocalY].building) {
+            cell = window.world.grids.buildings[LocalX][LocalY]
             setSelectedCell({
                 x: cell.positionx,
                 y: cell.positiony,
@@ -127,7 +127,7 @@ function initControls(controls,setSelectedCell){
             document.getElementById("y").innerHTML = "y: " + cell.positiony;
             document.getElementById("img-cell").src = cell.path;
             */
-            window.selectedbuilding = window.grid[LocalX][LocalY];
+            window.selectedbuilding = window.world.grids.buildings[LocalX][LocalY];
             
             window.planeSelected.scale.x = cell.building.size.w;
             window.planeSelected.scale.y = cell.building.size.h;
@@ -198,7 +198,7 @@ function initControls(controls,setSelectedCell){
             });
         }
         
-        window.selectedcellcontent = window.grid[LocalX][LocalY];
+        window.selectedcellcontent = window.world.grids.buildings[LocalX][LocalY];
         let building = window.buildingTypeSelected;
         let arrow = document.getElementById("triangle");
         
@@ -241,7 +241,7 @@ function initControls(controls,setSelectedCell){
 
         arrow.style.left = (screenX-5)+'px';
         arrow.style.top = screenY+'px';
-        if (!window.grid[LocalX][LocalY]?.building && building?.value != undefined){
+        if (!window.world.grids.buildings[LocalX][LocalY]?.building && building?.value != undefined){
             
             
             clearGhostBuildingMesh();

@@ -42,12 +42,10 @@ export function placeEntityOnGrid({
     type,
     data,
     texturePath,
-    TerritoryW = 0,
-    TerritoryH = 0,
+    TerritoryW = w,
+    TerritoryH = h,
     displayName
 }) {
-    if (!checkIfCellsAreFree(x, y, w, h, grid)) return false;
-
     occupyCells(x, y, w, h, type, data, texturePath, grid, TerritoryW, TerritoryH ,displayName);
     return true;
 }
