@@ -9,6 +9,8 @@ import BuildingForm from '../components/Forms/BuildingForm';
 import { useBuildings } from "../hooks/useBuildings";
 import { useGuilds } from '../hooks/useGuilds';
 
+import { updateGhostBuilding } from '../three/controls';
+
 import '../styles/map.css';
 
 export default function MapPage() {
@@ -18,6 +20,7 @@ export default function MapPage() {
   const [selectedBuilding, setSelectedBuilding] = useState(null);
   const [selectedBuildingType, setSelectedBuildingType] = useState(null);
   const [formMode, setFormMode] = React.useState(null); // 'add' or 'edit'
+  const [canPlaceHere, setCanPlaceHere] = useState(window.CanPlaceHere);
 
   const { buildings, fetchBuildings, addBuilding, updateBuilding, deleteBuilding} = useBuildings();
 
@@ -57,6 +60,23 @@ export default function MapPage() {
   const handleBuildingSelect = (building) => {
     setSelectedBuildingType(building);
   };
+
+  useEffect(() => {
+    updateGhostBuilding();
+  }, [selectedBuildingType]);
+
+  useEffect(() => {
+    const handler = (e) => {
+      setCanPlaceHere(e.detail);
+    };
+
+    window.addEventListener("canPlaceHereChanged", handler);
+
+    return () => {
+      window.removeEventListener("canPlaceHereChanged", handler);
+    };
+  }, []);
+
   useEffect(() => {
     const storedData = localStorage.getItem('PlayerData');
     if (storedData) {
@@ -90,6 +110,7 @@ export default function MapPage() {
         onAdd={handleAdd}
         onEdit={handleEdit}
         onDelete={handleDelete}
+        canPlaceHere={canPlaceHere}
       />
       {formMode && selectedBuildingType && (
           <BuildingForm

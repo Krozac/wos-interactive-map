@@ -1,5 +1,6 @@
-import { clearBuildings , addBuilding, deleteBuilding, updateBuilding, createTerritoryMesh,clearTerritories,didBuildingChange, rebuildGrid } from './building.js';
 import { cameraControls, setupCamera } from './camera.js';
+
+import { syncBuildings } from './buildings/buildingsController.js';
 
 import { EulerRotation} from './constants.js';
 import { initPlane } from './plane.js';
@@ -7,15 +8,27 @@ import { initControls } from './controls.js'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import { showObstacles } from './obstacles.js';
+import { plotObstacles } from './obstacles/obstaclesController.js';
 
 export let scene, camera, renderer, controls;
+
+
+const world = {
+  grids: {
+    buildings: [],
+    obstacles: [],
+    resources: []
+  }
+};
+
+
 
 export async function initScene(container, setSelectedCell) {
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x335799);
 
   window.scene = scene;
+  window.world = world;
 
   camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.001, 10000000);
 
@@ -53,60 +66,19 @@ export async function initScene(container, setSelectedCell) {
   animate();
 }
 
-let obstaclesRenderVersion = 0;
 export async function renderObstacles(setLoading) {
-  if (!window.scene) return;
-
-  const version = ++obstaclesRenderVersion;
-  window.obstaclesRenderVersion = version;
-
   if (setLoading) setLoading(true);
 
-  await showObstacles(version);
+  await plotObstacles();
 
   if (setLoading) setLoading(false);
 }
 
 
-export async function syncBuildings(buildings, setLoading) {
-  const existing = window.buildingMeshMap;
-  const newIds = new Set(buildings.map(b => b._id));
-  const promises = [];
+export async function renderBuildings(buildings, setLoading) {
   setLoading(true);
 
-  for (const id of existing.keys()) {
-    if (!newIds.has(id)) {
-      promises.push(deleteBuilding(id));
-    }
-  }
+  await syncBuildings(buildings)
 
-  for (const building of buildings) {
-    if (existing.has(building._id)) {
-      if (didBuildingChange(existing.get(building._id).userData.building, building)) {
-        promises.push(updateBuilding(building));
-      }
-    } else {
-      promises.push(addBuilding(building));
-    }
-  }
-
-  await Promise.all(promises);
-
-  window.grid = await rebuildGrid(buildings);
-
-  rebuildTerritories(buildings);
   setLoading(false);
-}
-
-let territoryVersion = 0;
-function rebuildTerritories(buildings) {
-  const version = ++territoryVersion;
-
-  // defer to next frame to avoid blocking + ensure scene stability
-  requestAnimationFrame(() => {
-    if (version !== territoryVersion) return;
-
-    clearTerritories();
-    createTerritoryMesh(buildings);
-  });
 }

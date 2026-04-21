@@ -143,4 +143,18 @@ function addCellQuad(arr, x, y) {
     );
 }
 
-export { checkIfCellsAreFree, occupyCells,getPlaneOrigin,convertWorldToLocal,convertLocalToWorld,hideCell,showCell,addCellQuad };
+
+function createEmptyGrid(gridSize) {
+    return Array(gridSize).fill().map(() => Array(gridSize).fill(null));
+}
+
+async function loadJSON(path) {
+    const res = await fetch(path);
+    if (!res.ok) {
+        throw new Error(`Failed to load ${path}`);
+    }
+    return res.json();
+}
+
+
+export { checkIfCellsAreFree, occupyCells,getPlaneOrigin,convertWorldToLocal,convertLocalToWorld,hideCell,showCell,addCellQuad ,createEmptyGrid,loadJSON};
