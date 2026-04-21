@@ -92,6 +92,8 @@ function initControls(controls,setSelectedCell){
         const LocalX = Math.floor(localPoint.x) ;
         const LocalY = Math.floor(localPoint.y) ;
 
+        window.lastSelectedCell = { cellX, cellY, LocalX, LocalY };
+
         setSelectedCell({
             x: LocalX,
             y: LocalY,
@@ -203,7 +205,6 @@ function initControls(controls,setSelectedCell){
         let arrow = document.getElementById("triangle");
         
         
-        
         showCell();
         // Get the screen coordinates of the cell center
         const cellPosition = new THREE.Vector3(cellX, cellY, 0);
@@ -221,8 +222,10 @@ function initControls(controls,setSelectedCell){
 
         // Position the div based on the cell's center in screen space
         let left = screenX - cellWidth;
-        let top = screenY - cellHeight -10 ; // Center vertically relative to the cell
+        let top = screenY - cellHeight - 35 ; // Center vertically relative to the cell
         arrow.style.transform = 'rotate(180deg)';
+
+        let arrowtop = screenY - 25
 
         if (screenX - cellWidth < 0) {
             left = screenX + cellWidth/2 -60; 
@@ -231,46 +234,18 @@ function initControls(controls,setSelectedCell){
             left = screenX - cellWidth*2 +30 ; 
         }
         if (screenY - cellHeight - 10 < 0) {
-            top = screenY + 20; 
+            top = screenY + 35; 
+            arrowtop = screenY + 10
             arrow.style.transform = 'rotate(0deg)';
         }
     
         celldiv.style.left = left+'px';
         celldiv.style.top = top+'px';
 
-
         arrow.style.left = (screenX-5)+'px';
-        arrow.style.top = screenY+'px';
-        if (!window.world.grids.buildings[LocalX][LocalY]?.building && building?.value != undefined){
-            
-            
-            clearGhostBuildingMesh();
-            
-            const textures = await loadTextures();
-            const texture = textures[building.value].texture;
-            texture.center.set(0.5, 0.5); // Center the rotation point
-            texture.rotation = -Math.PI / 4;
-            const geometry = new THREE.PlaneGeometry(building.width, building.height); 
-            
-            const material = new THREE.MeshBasicMaterial({
-                map: texture, // Apply the loaded texture
-                side: THREE.DoubleSide,
-                transparent: true, // Enable transparency 
-                opacity:0.5,
-                depthTest: false, // Optional: prevents depth testing for transparent objects
-            });
-            let newghostbuildingmesh = new THREE.Mesh(geometry, material);
-            newghostbuildingmesh.position.set(cellX + (building.width/2) -0.5, cellY + (building.height/2) -0.5, 0); // Adjust the position based on the size
-            newghostbuildingmesh.rotation.set(Math.PI/16,-Math.PI/16,0)  
-            newghostbuildingmesh.identifiant = "ghost";
-            window.ghostbuildingmesh = newghostbuildingmesh;
-            // Add the building mesh to the scene
-            window.scene.add(window.ghostbuildingmesh);
+        arrow.style.top = arrowtop +'px';
 
-        }
-        else{
-            clearGhostBuildingMesh();
-        }
+        updateGhostBuilding()
     }
    
 }
@@ -330,4 +305,94 @@ function clearGhostBuildingMesh() {
     }
 }
 
-export { initControls }
+function canPlaceBuilding(LocalX, LocalY, building) {
+    if(!building) return true;
+    console.log("building",building)
+    const w = building.height;
+    const h = building.width;
+
+    for (let x = 0; x < w; x++) {
+        for (let y = 0; y < h; y++) {
+            const checkX = LocalX + x;
+            const checkY = LocalY + y;
+
+            // خارج map (optional safety)
+            if (
+                !window.world.grids.buildings[checkX] ||
+                !window.world.grids.obstacles[checkX]
+            ) {
+                return false;
+            }
+
+            // building collision
+            if (window.world.grids.buildings[checkX][checkY]?.building) {
+                return false;
+            }
+
+            // obstacle collision
+            if (window.world.grids.obstacles[checkX][checkY]?.building) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+async function updateGhostBuilding(setCanPlaceHere) {
+
+    console.log("UPDATING GHOST BUILDING",window.buildingTypeSelected)
+    clearGhostBuildingMesh();
+
+    const building = window.buildingTypeSelected;
+    if (!building || !window.lastSelectedCell) return;
+
+    const { cellX, cellY, LocalX, LocalY } = window.lastSelectedCell;
+
+    const textures = await loadTextures();
+    const texture = textures[building.value].texture;
+
+    texture.center.set(0.5, 0.5);
+    texture.rotation = -Math.PI / 4;
+
+    const geometry = new THREE.PlaneGeometry(building.width, building.height);
+
+    const material = new THREE.MeshBasicMaterial({
+        map: texture,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.5,
+        depthTest: false,
+    });
+
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(
+        cellX + (building.width / 2) - 0.5,
+        cellY + (building.height / 2) - 0.5,
+        0
+    );
+
+    mesh.rotation.set(Math.PI / 16, -Math.PI / 16, 0);
+    mesh.identifiant = "ghost";
+
+    window.ghostbuildingmesh = mesh;
+    window.scene.add(mesh);
+
+
+    let isValid ;
+    if (!canPlaceBuilding(LocalX,LocalY,building)){
+        isValid = false;
+        window.planeSelected.material.color.set(0xff6b6b);
+    }else{
+        isValid = true
+        window.planeSelected.material.color.set(0x89CFF0);
+    }
+
+    window.CanPlaceHere = isValid;
+
+    window.dispatchEvent(
+        new CustomEvent("canPlaceHereChanged", { detail: isValid })
+    );
+}
+
+export { initControls,  updateGhostBuilding}

@@ -72,6 +72,10 @@ canvas{
     margin:0;
 }
 
+#Cell > #info{
+    font-size:x-small;
+}
+
 #img-cell{
     height:50px;
     width:60px;
@@ -90,7 +94,7 @@ canvas{
 
 #addBuildingBtn{
     position:absolute;
-    right:30px;
+    right:10px;
     top:0;
     font-size: 9px;
     line-height:20px;
@@ -271,14 +275,15 @@ button{
 }
 
 #triangle {
-      width: 0;
-      height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-bottom: 10px solid white;
-      position: absolute;
-        transform: rotate(180deg);
-    }
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid white;
+    position: absolute;
+    transform: rotate(180deg);
+    z-index: 100;
+}
 
 #Furnace-Placed{
     z-index:1;

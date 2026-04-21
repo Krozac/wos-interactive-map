@@ -23,7 +23,8 @@
       "wood": "Wood Yard"
     },
     "furnace": "Furnace",
-    "sunfire": "Sunfire"
+    "sunfire": "Sunfire",
+    "cantplace" : "You can't place this building here"
   },
   "obstacles": {
     "mountain": {
