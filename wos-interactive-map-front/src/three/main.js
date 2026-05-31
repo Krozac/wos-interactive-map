@@ -33,8 +33,11 @@ export async function initScene(container, setSelectedCell) {
   camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.001, 10000000);
 
   window.camera = camera;
-
-  renderer = new THREE.WebGLRenderer();
+  
+  renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    preserveDrawingBuffer: true
+  });
   renderer.setSize(container.clientWidth, container.clientHeight);
 
   window.renderer = renderer;
